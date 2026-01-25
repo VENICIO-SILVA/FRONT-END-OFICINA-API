@@ -658,7 +658,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(MenuUsuarios);
 
-        JMenuRelatorios.setText("Relatorios");
+        JMenuRelatorios.setText("Relatórios");
         jMenuBar1.add(JMenuRelatorios);
 
         setJMenuBar(jMenuBar1);
@@ -859,7 +859,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField CampoTelefoneCadastroCliente;
     private javax.swing.JTextField CampoTelefoneResultadoCliente;
     private javax.swing.JLabel IconPesquisar;
-    private javax.swing.JInternalFrame InternaCliente;
+    public static javax.swing.JInternalFrame InternaCliente;
     private javax.swing.JInternalFrame InternaDadosPesquisa;
     private javax.swing.JInternalFrame InternaEditarUsuario;
     private javax.swing.JInternalFrame InternaResultado;

@@ -80,7 +80,7 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="JMenuRelatorios">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Relatorios"/>
+            <Property name="text" type="java.lang.String" value="Relat&#xf3;rios"/>
           </Properties>
         </Menu>
       </SubComponents>
