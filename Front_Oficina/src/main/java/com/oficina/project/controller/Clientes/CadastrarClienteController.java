@@ -66,7 +66,7 @@ public class CadastrarClienteController {
         view.AtivarBarraProgresso().setValue(100);
         Timestamp DataCadastro = new Timestamp(System.currentTimeMillis());
 
-        view.RetornoDados(Nome, Email, Telefone, Endereco, Cpf, DataCadastro.toString());
+        view.RetornoDadosCliente(Nome, Email, Telefone, Endereco, Cpf, DataCadastro.toString());
         JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
     }
 }
