@@ -5,7 +5,7 @@
 package com.oficina.project.controller.Carros;
 
 import com.oficina.project.service.CarrosService;
-import com.oficina.project.view.TelaPrincipal.CarrosView.CadastrarCarrosView;
+import com.oficina.project.view.TelaPrincipal.TelaPrincipal;
 import java.sql.Timestamp;
 import javax.swing.JOptionPane;
 
@@ -14,10 +14,10 @@ import javax.swing.JOptionPane;
  * @author Venicio
  */
 public class CadastrarCarrosController {
-     private CadastrarCarrosView view;
+     private TelaPrincipal view;
     private CarrosService service;
 
-    public CadastrarCarrosController(CadastrarCarrosView view) {
+    public CadastrarCarrosController(TelaPrincipal view) {
         this.view = view;
         this.service = new CarrosService();
         IniciarController();
@@ -33,7 +33,7 @@ public class CadastrarCarrosController {
 
     private void Cadastrar() {
         
-        String idCliente = view.GetIdcarro().trim();
+        String idCliente = view.GetIdClienteCarro().trim();
         String Modelo = view.GetModelo().trim();
         String Marca = view.GetMarca().trim();
         String Placa = view.GetPlaca().trim();
@@ -66,7 +66,7 @@ public class CadastrarCarrosController {
         view.AtivarBarraProgresso().setValue(100);
         Timestamp agora = new Timestamp(System.currentTimeMillis());
         
-        view.RetornoDados(idCliente, Modelo, Marca, Placa, Cor, Ano, agora.toString());
+        view.RetornoDadosCarros(idCliente, Modelo, Marca, Placa, Cor, Ano, agora.toString());
         JOptionPane.showMessageDialog(null, "Carro Cadastrado com sucesso!");
     }
 }
