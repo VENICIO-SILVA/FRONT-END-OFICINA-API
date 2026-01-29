@@ -938,6 +938,13 @@
         </Container>
         <Container class="javax.swing.JInternalFrame" name="TelaInternaCadastrarCarros">
           <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Carros">
+                  <Font PropertyName="font" name="Segoe UI" size="12" style="1"/>
+                </TitledBorder>
+              </Border>
+            </Property>
             <Property name="closable" type="boolean" value="true"/>
             <Property name="iconifiable" type="boolean" value="true"/>
             <Property name="maximizable" type="boolean" value="true"/>
@@ -1413,7 +1420,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane2" alignment="0" pref="946" max="32767" attributes="0"/>
+                              <Component id="jScrollPane2" alignment="0" pref="948" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
@@ -1812,6 +1819,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="VINCULAR CLIENTE AO CARRO"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

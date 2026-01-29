@@ -62,11 +62,13 @@ com\oficina\project\view\TelaPrincipal\ClienteViews\CadastrarClienteView$1.class
 com\oficina\project\view\TelaPrincipal\AdmViews\CadastrarAdmView$6.class
 com\oficina\project\view\TelaPrincipal\TelaPrincipal$5.class
 com\oficina\project\controller\Clientes\CadastrarClienteController.class
+com\oficina\project\view\TelaPrincipal\CarrosView\TelaVincularClienteCarros.class
 com\oficina\project\controller\Clientes\BuscarClienteController$1.class
 com\oficina\project\view\TelaPrincipal\TelaPrincipal$12.class
 com\oficina\project\view\TelaPrincipal\TelaPrincipal$2.class
 com\oficina\project\view\TelaPrincipal\ClienteViews\CadastrarClienteView$7.class
 com\oficina\project\view\TelaPrincipal\TelaPrincipal$19.class
+com\oficina\project\view\TelaPrincipal\TelaPrincipal$27.class
 com\oficina\project\view\Login\LoginView$1.class
 com\oficina\project\controller\Carros\CadastrarCarrosController.class
 com\oficina\project\service\AdministradoresService$1.class

@@ -8,6 +8,7 @@ import com.oficina.project.controller.Administradores.BuscarAdmController;
 import com.oficina.project.controller.Administradores.CadastrarAdmController;
 import com.oficina.project.controller.Clientes.BuscarClienteController;
 import com.oficina.project.view.TelaPrincipal.AdmViews.CadastrarAdmView;
+import com.oficina.project.view.TelaPrincipal.CarrosView.TelaVincularClienteCarros;
 import com.oficina.project.view.TelaPrincipal.ClienteViews.CadastrarClienteView;
 import com.oficina.project.view.TelaPrincipal.MenuServicosView.MenuServicosView;
 import java.awt.Color;
@@ -667,6 +668,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TelaInterna.add(InternaCliente);
         InternaCliente.setBounds(10, 10, 1500, 810);
 
+        TelaInternaCadastrarCarros.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Carros", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
         TelaInternaCadastrarCarros.setClosable(true);
         TelaInternaCadastrarCarros.setIconifiable(true);
         TelaInternaCadastrarCarros.setMaximizable(true);
@@ -1057,7 +1059,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(InternaEditarUsuario1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(InternaEditarUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 946, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 948, Short.MAX_VALUE)
                     .addGroup(InternaEditarUsuario1Layout.createSequentialGroup()
                         .addGroup(InternaEditarUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(InternaEditarUsuario1Layout.createSequentialGroup()
@@ -1107,6 +1109,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jButton1.setText("VINCULAR CLIENTE AO CARRO");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout TelaInternaCadastrarCarrosLayout = new javax.swing.GroupLayout(TelaInternaCadastrarCarros.getContentPane());
         TelaInternaCadastrarCarros.getContentPane().setLayout(TelaInternaCadastrarCarrosLayout);
@@ -1408,6 +1415,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void CampoInfoId1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoInfoId1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoInfoId1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        TelaVincularClienteCarros iniciar = new TelaVincularClienteCarros();
+        iniciar.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
     public String GetIdUsuario() {
         return CampoInfoId.getText();
     }
