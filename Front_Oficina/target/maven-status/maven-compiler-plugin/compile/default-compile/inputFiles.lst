@@ -2,6 +2,7 @@ C:\Users\Venicio\Desktop\FRONT_OFICINA\Front_Oficina\src\main\java\com\oficina\p
 C:\Users\Venicio\Desktop\FRONT_OFICINA\Front_Oficina\src\main\java\com\oficina\project\controller\Administradores\BuscarAdmController.java
 C:\Users\Venicio\Desktop\FRONT_OFICINA\Front_Oficina\src\main\java\com\oficina\project\controller\Administradores\CadastrarAdmController.java
 C:\Users\Venicio\Desktop\FRONT_OFICINA\Front_Oficina\src\main\java\com\oficina\project\controller\Administradores\EditarAdmController.java
+C:\Users\Venicio\Desktop\FRONT_OFICINA\Front_Oficina\src\main\java\com\oficina\project\controller\Carros\BuscarClienteVincularCarroController.java
 C:\Users\Venicio\Desktop\FRONT_OFICINA\Front_Oficina\src\main\java\com\oficina\project\controller\Carros\CadastrarCarrosController.java
 C:\Users\Venicio\Desktop\FRONT_OFICINA\Front_Oficina\src\main\java\com\oficina\project\controller\Clientes\BuscarClienteController.java
 C:\Users\Venicio\Desktop\FRONT_OFICINA\Front_Oficina\src\main\java\com\oficina\project\controller\Clientes\CadastrarClienteController.java
@@ -16,6 +17,7 @@ C:\Users\Venicio\Desktop\FRONT_OFICINA\Front_Oficina\src\main\java\com\oficina\p
 C:\Users\Venicio\Desktop\FRONT_OFICINA\Front_Oficina\src\main\java\com\oficina\project\model\entities\OrdemServicoItens.java
 C:\Users\Venicio\Desktop\FRONT_OFICINA\Front_Oficina\src\main\java\com\oficina\project\model\entities\Produtos.java
 C:\Users\Venicio\Desktop\FRONT_OFICINA\Front_Oficina\src\main\java\com\oficina\project\service\AdministradoresService.java
+C:\Users\Venicio\Desktop\FRONT_OFICINA\Front_Oficina\src\main\java\com\oficina\project\service\CarroService.java
 C:\Users\Venicio\Desktop\FRONT_OFICINA\Front_Oficina\src\main\java\com\oficina\project\service\CarrosService.java
 C:\Users\Venicio\Desktop\FRONT_OFICINA\Front_Oficina\src\main\java\com\oficina\project\service\ClienteService.java
 C:\Users\Venicio\Desktop\FRONT_OFICINA\Front_Oficina\src\main\java\com\oficina\project\service\LoginService.java
@@ -23,5 +25,4 @@ C:\Users\Venicio\Desktop\FRONT_OFICINA\Front_Oficina\src\main\java\com\oficina\p
 C:\Users\Venicio\Desktop\FRONT_OFICINA\Front_Oficina\src\main\java\com\oficina\project\view\TelaPrincipal\AdmViews\CadastrarAdmView.java
 C:\Users\Venicio\Desktop\FRONT_OFICINA\Front_Oficina\src\main\java\com\oficina\project\view\TelaPrincipal\CarrosView\TelaVincularClienteCarros.java
 C:\Users\Venicio\Desktop\FRONT_OFICINA\Front_Oficina\src\main\java\com\oficina\project\view\TelaPrincipal\ClienteViews\CadastrarClienteView.java
-C:\Users\Venicio\Desktop\FRONT_OFICINA\Front_Oficina\src\main\java\com\oficina\project\view\TelaPrincipal\MenuServicosView\MenuServicosView.java
 C:\Users\Venicio\Desktop\FRONT_OFICINA\Front_Oficina\src\main\java\com\oficina\project\view\TelaPrincipal\TelaPrincipal.java
