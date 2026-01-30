@@ -10,7 +10,6 @@ import com.oficina.project.controller.Clientes.BuscarClienteController;
 import com.oficina.project.view.TelaPrincipal.AdmViews.CadastrarAdmView;
 import com.oficina.project.view.TelaPrincipal.CarrosView.TelaVincularClienteCarros;
 import com.oficina.project.view.TelaPrincipal.ClienteViews.CadastrarClienteView;
-import com.oficina.project.view.TelaPrincipal.MenuServicosView.MenuServicosView;
 import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Image;
@@ -191,6 +190,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        TelaInternaServiços = new javax.swing.JInternalFrame();
+        jInternalFrame2 = new javax.swing.JInternalFrame();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         LOGO = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         MenuServicos = new javax.swing.JMenu();
@@ -670,10 +675,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         TelaInternaCadastrarCarros.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Carros", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
         TelaInternaCadastrarCarros.setClosable(true);
+        TelaInternaCadastrarCarros.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         TelaInternaCadastrarCarros.setIconifiable(true);
         TelaInternaCadastrarCarros.setMaximizable(true);
         TelaInternaCadastrarCarros.setResizable(true);
-        TelaInternaCadastrarCarros.setVisible(true);
+        TelaInternaCadastrarCarros.setVisible(false);
 
         BtSalvarCarro.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         BtSalvarCarro.setText("Cadastrar Carro");
@@ -1205,9 +1211,89 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TelaInterna.add(TelaInternaCadastrarCarros);
         TelaInternaCadastrarCarros.setBounds(0, 0, 1520, 830);
 
+        TelaInternaServiços.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        TelaInternaServiços.setClosable(true);
+        TelaInternaServiços.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
+        TelaInternaServiços.setResizable(true);
+        TelaInternaServiços.setTitle("ARÉA DE SERVIÇOS");
+        TelaInternaServiços.setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/servico-tecnico.png"))); // NOI18N
+        TelaInternaServiços.setVisible(true);
+
+        jInternalFrame2.setClosable(true);
+        jInternalFrame2.setIconifiable(true);
+        jInternalFrame2.setTitle("SERVIÇOS");
+        jInternalFrame2.setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/servico-de-gestao.png"))); // NOI18N
+
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton2.setText("NOVO SERVIÇO");
+
+        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton3.setText("ALTERAR/EXCLUIR SERVIÇO");
+
+        javax.swing.GroupLayout jInternalFrame2Layout = new javax.swing.GroupLayout(jInternalFrame2.getContentPane());
+        jInternalFrame2.getContentPane().setLayout(jInternalFrame2Layout);
+        jInternalFrame2Layout.setHorizontalGroup(
+            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrame2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jInternalFrame2Layout.setVerticalGroup(
+            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrame2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton4.setText("NOVO SERVIÇO");
+
+        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton5.setText("ALTERAR/EXCLUIR SERVIÇO");
+
+        javax.swing.GroupLayout TelaInternaServiçosLayout = new javax.swing.GroupLayout(TelaInternaServiços.getContentPane());
+        TelaInternaServiços.getContentPane().setLayout(TelaInternaServiçosLayout);
+        TelaInternaServiçosLayout.setHorizontalGroup(
+            TelaInternaServiçosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TelaInternaServiçosLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(TelaInternaServiçosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(16, Short.MAX_VALUE))
+            .addGroup(TelaInternaServiçosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(TelaInternaServiçosLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jInternalFrame2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        TelaInternaServiçosLayout.setVerticalGroup(
+            TelaInternaServiçosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TelaInternaServiçosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton5)
+                .addContainerGap(16, Short.MAX_VALUE))
+            .addGroup(TelaInternaServiçosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(TelaInternaServiçosLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jInternalFrame2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        TelaInterna.add(TelaInternaServiços);
+        TelaInternaServiços.setBounds(10, 10, 400, 110);
+
         LOGO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/LogoOficina.png"))); // NOI18N
         TelaInterna.add(LOGO);
-        LOGO.setBounds(-3, 26, 1520, 810);
+        LOGO.setBounds(-3, -4, 1520, 840);
 
         jMenuBar1.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -1305,17 +1391,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_MenuClienteActionActionPerformed
 
     private void MenuServicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuServicosActionPerformed
-        MenuServicosView iniciar = new MenuServicosView();
-        iniciar.setVisible(true);
-        TelaInterna.add(iniciar);
-
+        
     }//GEN-LAST:event_MenuServicosActionPerformed
 
     private void MenuServicosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuServicosMouseClicked
-        MenuServicosView iniciar = new MenuServicosView();
-        iniciar.setVisible(true);
-        TelaInterna.add(iniciar);
-
+      TelaInternaServiços.setVisible(true);
     }//GEN-LAST:event_MenuServicosMouseClicked
 
     private void MenuCarrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCarrosActionPerformed
@@ -1613,7 +1693,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTable TabelaClientes;
     private javax.swing.JDesktopPane TelaInterna;
     private javax.swing.JInternalFrame TelaInternaCadastrarCarros;
+    private javax.swing.JInternalFrame TelaInternaServiços;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JInternalFrame jInternalFrame2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -4,6 +4,9 @@
  */
 package com.oficina.project.view.TelaPrincipal.CarrosView;
 
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Venicio
@@ -17,6 +20,7 @@ public class TelaVincularClienteCarros extends javax.swing.JFrame {
      */
     public TelaVincularClienteCarros() {
         initComponents();
+        new com.oficina.project.controller.Carros.BuscarClienteVincularCarroController(this);
     }
 
     /**
@@ -31,17 +35,17 @@ public class TelaVincularClienteCarros extends javax.swing.JFrame {
         CampoPesquisarCliente = new javax.swing.JTextField();
         IconePesquisar = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TabelaVincularCliente = new javax.swing.JTable();
         LbClienteSelecionado = new javax.swing.JLabel();
         CampoClienteSelecionado = new javax.swing.JTextField();
         LbID = new javax.swing.JLabel();
         CampoIdSelecionado = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         IconePesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/lupa.png"))); // NOI18N
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TabelaVincularCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -55,10 +59,15 @@ public class TelaVincularClienteCarros extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "Nome:", "ID:"
+                "ID:", "NOME:"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        TabelaVincularCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TabelaVincularClienteMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(TabelaVincularCliente);
 
         LbClienteSelecionado.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         LbClienteSelecionado.setText("CLIENTE SELECIONADO:");
@@ -113,6 +122,10 @@ public class TelaVincularClienteCarros extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void TabelaVincularClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaVincularClienteMouseClicked
+      
+    }//GEN-LAST:event_TabelaVincularClienteMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -145,7 +158,13 @@ public class TelaVincularClienteCarros extends javax.swing.JFrame {
     private javax.swing.JLabel IconePesquisar;
     private javax.swing.JLabel LbClienteSelecionado;
     private javax.swing.JLabel LbID;
+    private javax.swing.JTable TabelaVincularCliente;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+public JTextField getCampoPesquisarVincularCliente() {
+        return CampoPesquisarCliente;
+    }
+ public JTable getTabelaVincularClientes() {
+        return TabelaVincularCliente;
+    }
 }
