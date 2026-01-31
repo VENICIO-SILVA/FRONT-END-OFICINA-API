@@ -4,6 +4,8 @@
  */
 package com.oficina.project.view.TelaPrincipal.CarrosView;
 
+import com.oficina.project.controller.Carros.BuscarClienteVincularCarroController;
+import com.oficina.project.controller.Clientes.BuscarClienteController;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
@@ -12,7 +14,7 @@ import javax.swing.JTextField;
  * @author Venicio
  */
 public class TelaVincularClienteCarros extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaVincularClienteCarros.class.getName());
 
     /**
@@ -123,7 +125,11 @@ public class TelaVincularClienteCarros extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void TabelaVincularClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaVincularClienteMouseClicked
-      
+        int linha = TabelaVincularCliente.getSelectedRow();
+        if (linha == -1) {
+            return;
+        }
+        new BuscarClienteVincularCarroController(this).ClienteSelecionado(linha);
     }//GEN-LAST:event_TabelaVincularClienteMouseClicked
 
     /**
@@ -164,7 +170,13 @@ public class TelaVincularClienteCarros extends javax.swing.JFrame {
 public JTextField getCampoPesquisarVincularCliente() {
         return CampoPesquisarCliente;
     }
- public JTable getTabelaVincularClientes() {
+
+    public JTable getTabelaVincularClientes() {
         return TabelaVincularCliente;
+    }
+
+    public void setClienteSelecionado(String id, String nome) {
+        CampoClienteSelecionado.setText(nome);
+        CampoIdSelecionado.setText(id);
     }
 }
