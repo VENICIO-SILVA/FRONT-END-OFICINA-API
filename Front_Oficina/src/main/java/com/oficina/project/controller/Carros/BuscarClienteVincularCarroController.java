@@ -69,6 +69,7 @@ public class BuscarClienteVincularCarroController {
         String id = valorCelula(tabela, linha, 0);
         String nome = valorCelula(tabela, linha, 1);
         
+        view.setClienteSelecionado(id, nome);
     }
 
 }
