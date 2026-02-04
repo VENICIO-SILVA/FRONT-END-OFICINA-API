@@ -27,13 +27,13 @@ public class CadastrarCarrosController {
 
     private void IniciarController() {
 
-        view.getBtSalvar().addActionListener(e -> Cadastrar());
+        view.getBtSalvarCarro().addActionListener(e -> Cadastrar());
 
     }
 
     private void Cadastrar() {
         
-        String idCliente = view.GetIdClienteCarro().trim();
+        String idCliente = view.GetIdClienteCarroVinculado().trim();
         String Modelo = view.GetModelo().trim();
         String Marca = view.GetMarca().trim();
         String Placa = view.GetPlaca().trim();
@@ -63,7 +63,7 @@ public class CadastrarCarrosController {
         }
 
         boolean sucesso = service.Cadastrar(idCliente, Modelo, Marca, Placa, Cor, Ano);
-        view.AtivarBarraProgresso().setValue(100);
+        view.AtivarBarraProgressoCarro();
         Timestamp agora = new Timestamp(System.currentTimeMillis());
         
         view.RetornoDadosCarros(idCliente, Modelo, Marca, Placa, Cor, Ano, agora.toString());
