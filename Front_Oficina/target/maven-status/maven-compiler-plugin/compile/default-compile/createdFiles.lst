@@ -74,6 +74,7 @@ com\oficina\project\view\TelaPrincipal\AdmViews\CadastrarAdmView$6.class
 com\oficina\project\service\CarroService.class
 com\oficina\project\view\TelaPrincipal\TelaPrincipal$5.class
 com\oficina\project\controller\Clientes\CadastrarClienteController.class
+com\oficina\project\view\TelaPrincipal\CarrosView\TelaVincularClienteCarros$2.class
 com\oficina\project\controller\Clientes\BuscarClienteController$1.class
 com\oficina\project\view\TelaPrincipal\TelaPrincipal$27.class
 com\oficina\project\controller\Carros\BuscarClienteVincularCarroController.class

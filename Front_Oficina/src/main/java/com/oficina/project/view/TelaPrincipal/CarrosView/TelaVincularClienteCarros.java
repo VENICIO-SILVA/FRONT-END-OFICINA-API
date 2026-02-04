@@ -6,6 +6,8 @@ package com.oficina.project.view.TelaPrincipal.CarrosView;
 
 import com.oficina.project.controller.Carros.BuscarClienteVincularCarroController;
 import com.oficina.project.controller.Clientes.BuscarClienteController;
+import com.oficina.project.view.TelaPrincipal.TelaPrincipal;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
@@ -20,7 +22,15 @@ public class TelaVincularClienteCarros extends javax.swing.JFrame {
     /**
      * Creates new form TelaVincularClienteCarros
      */
+    private TelaPrincipal telaPrincipal; // referência da tela principal
+
     public TelaVincularClienteCarros() {
+        initComponents();
+        new com.oficina.project.controller.Carros.BuscarClienteVincularCarroController(this);
+    }
+
+    public TelaVincularClienteCarros(TelaPrincipal telaPrincipal) {
+        this.telaPrincipal = telaPrincipal; // guarda a instância recebida
         initComponents();
         new com.oficina.project.controller.Carros.BuscarClienteVincularCarroController(this);
     }
@@ -42,6 +52,7 @@ public class TelaVincularClienteCarros extends javax.swing.JFrame {
         CampoClienteSelecionado = new javax.swing.JTextField();
         LbID = new javax.swing.JLabel();
         CampoIdSelecionado = new javax.swing.JTextField();
+        BotaoVincular = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -77,29 +88,41 @@ public class TelaVincularClienteCarros extends javax.swing.JFrame {
         LbID.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         LbID.setText("ID:");
 
+        BotaoVincular.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        BotaoVincular.setText("VINCULAR");
+        BotaoVincular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoVincularActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(7, 7, 7)
+                            .addComponent(IconePesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(CampoPesquisarCliente))
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(22, 22, 22)
+                            .addComponent(LbClienteSelecionado)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(CampoClienteSelecionado)
+                            .addGap(18, 18, 18)
+                            .addComponent(LbID)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(CampoIdSelecionado, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(IconePesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CampoPesquisarCliente))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(LbClienteSelecionado)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CampoClienteSelecionado)
-                        .addGap(18, 18, 18)
-                        .addComponent(LbID)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CampoIdSelecionado, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(165, 165, 165)
+                        .addComponent(BotaoVincular)))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -116,8 +139,10 @@ public class TelaVincularClienteCarros extends javax.swing.JFrame {
                     .addComponent(LbID)
                     .addComponent(CampoIdSelecionado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BotaoVincular)
+                .addGap(282, 282, 282))
         );
 
         pack();
@@ -131,6 +156,14 @@ public class TelaVincularClienteCarros extends javax.swing.JFrame {
         }
         new BuscarClienteVincularCarroController(this).ClienteSelecionado(linha);
     }//GEN-LAST:event_TabelaVincularClienteMouseClicked
+
+    private void BotaoVincularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoVincularActionPerformed
+        String IdClienteSelecionado = CampoIdSelecionado.getText();
+        telaPrincipal.SetIdClienteCarro(IdClienteSelecionado); // usa a instância correta
+        JOptionPane.showMessageDialog(null, "Cliente Vinculado Com Sucesso");
+        this.dispose();
+
+    }//GEN-LAST:event_BotaoVincularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,6 +191,7 @@ public class TelaVincularClienteCarros extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotaoVincular;
     private javax.swing.JTextField CampoClienteSelecionado;
     private javax.swing.JTextField CampoIdSelecionado;
     private javax.swing.JTextField CampoPesquisarCliente;
