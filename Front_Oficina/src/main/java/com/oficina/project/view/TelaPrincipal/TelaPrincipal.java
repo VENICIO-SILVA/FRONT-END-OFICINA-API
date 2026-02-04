@@ -16,6 +16,7 @@ import java.awt.Image;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JProgressBar;
 import javax.swing.JTable;
@@ -29,9 +30,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaPrincipal.class.getName());
 
-    /**
-     * Creates new form TelaPrincipal
-     */
+    private String IdClienteCarros;
     public TelaPrincipal() {
         initComponents();
         //clientes
@@ -1440,7 +1439,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BtSalvarClienteActionPerformed
 
     private void BtSalvarCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtSalvarCarroActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_BtSalvarCarroActionPerformed
 
     private void IconeInformativoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IconeInformativoMouseEntered
@@ -1497,34 +1496,34 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_CampoInfoId1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        TelaVincularClienteCarros iniciar = new TelaVincularClienteCarros();
+        TelaVincularClienteCarros iniciar = new TelaVincularClienteCarros(this);
         iniciar.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
-    public String GetIdUsuario() {
+    public String GetIdUsuarioCliente() {
         return CampoInfoId.getText();
     }
 
-    public String GetNome() {
+    public String GetNomeCliente() {
         return CampoNomeCadastroCliente.getText();
     }
 
-    public String GetEmail() {
+    public String GetEmailCliente() {
         return CampoEmailCadastroCliente.getText();
     }
 
-    public String GetCpf() {
+    public String GetCpfCliente() {
         return CampoCpfCadastroCliente.getText();
     }
 
-    public String GetTelefone() {
+    public String GetTelefoneCliente() {
         return CampoTelefoneCadastroCliente.getText();
     }
 
-    public String GetEndereco() {
+    public String GetEnderecoCliente() {
         return CampoEnderecoCliente.getText();
     }
 
-    public Map<String, String> InfoUsuarioEditar() {
+    public Map<String, String> InfoClienteEditar() {
         Map<String, String> dados = new HashMap<>();
         dados.put("id", CampoInfoId.getText());
         dados.put("Nome", CampoInfoNome.getText());
@@ -1536,20 +1535,23 @@ public class TelaPrincipal extends javax.swing.JFrame {
         dados.put("dataAtualizacao", CampoInfoDataAtualizacao.getText());
         return dados;
     }
-
-    public javax.swing.JButton getBtSalvar() {
+    //botao salvar Cliente
+    public javax.swing.JButton getBtSalvarCliente() {
         return BtSalvarCliente;
     }
+      public javax.swing.JButton getBtSalvarCarro() {
+        return BtSalvarCarro;
+    }
 
-    public javax.swing.JButton getBtExlcuir() {
+    public javax.swing.JButton getBtExlcuirCliente() {
         return BtExcluir;
     }
 
-    public javax.swing.JButton getBtEditar() {
+    public javax.swing.JButton getBtEditarCliente() {
         return BtEditar;
     }
 
-    public JProgressBar AtivarBarraProgresso() {
+    public JProgressBar AtivarBarraProgressoCliente() {
         return BarraProgressoCliente;
     }
 
@@ -1711,11 +1713,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
-  public JTextField getCampoPesquisar() {
+  public JTextField getCampoPesquisarCliente() {
         return CampoPesquisar;
     }
 
-    public JTable getTabelaUsuarios() {
+    public JTable getTabelaCliente() {
         return TabelaClientes;
     }
 
@@ -1728,7 +1730,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         CampoResultadoCadastroCliente.setText(DataCadastro);
     }
 
-    public void InfoUsuario(String id, String nome, String email, String cpf, String telefone, String Endereco, String dataCadastro, String dataAtualizacao) {
+    public void InfoCliente(String id, String nome, String email, String cpf, String telefone, String Endereco, String dataCadastro, String dataAtualizacao) {
         this.CampoInfoId.setText(id);
         this.CampoInfoNome.setText(nome);
         this.CampoInfoEmail.setText(email);
@@ -1738,31 +1740,41 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.CampoInfoDataCadastro.setText(dataCadastro);
         this.CampoInfoDataAtualizacao.setText(dataAtualizacao);
     }
-
-    public String GetIdClienteCarro() {
-        return "";
+    //função recebe o id do cliente para cadastrar um carro
+    public void SetIdClienteCarro(String idClienteVinculo) {
+        //resolver nao esta recebendo o ID
+         IdClienteCarros = idClienteVinculo;
+    }
+    public String GetIdClienteCarroVinculado(){
+        String idteste = IdClienteCarros;
+        return this.IdClienteCarros;
     }
 
     public String GetModelo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return CampoModeloCadastroCarro.toString();
     }
 
     public String GetMarca() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       return CampoMarcaCadastroCarros.toString();
     }
 
     public String GetPlaca() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return CampoPlacaCadastroCarros.toString();
     }
 
     public String GetCor() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return CampoCorCadastrarCarros.toString();
     }
 
     public String GetAnoCarro() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return CampoAnoCadastroCarros.toString();
     }
      public void RetornoDadosCarros(String idCliente, String Modelo, String Marca, String Placa, String Cor, String Ano, String toString) {
-       
+       this.CampoModeloResultadoCarros.setText(Modelo);
+       this.CampoResultadoClienteCarros.setText(idCliente);
+    }
+
+    public Object AtivarBarraProgressoCarro() {
+        return BarraProgresso;
     }
 }
