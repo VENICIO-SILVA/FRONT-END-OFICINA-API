@@ -28,13 +28,13 @@ public class EditarClienteController {
 
     private void IniciarController() {
         System.out.println("Editar iniciado");
-        view.getBtEditar().addActionListener(e -> Editar());
+        view.getBtEditarCliente().addActionListener(e -> Editar());
     }
 
     private void Editar() {
         System.out.println("Editar iniciado");
         // Recupera o Map com os dados da view
-        Map<String, String> dados = view.InfoUsuarioEditar();
+        Map<String, String> dados = view.InfoClienteEditar();
         String IdCliente = dados.get("id");
         String Nome = dados.get("Nome");
         String Email = dados.get("email");
