@@ -28,16 +28,16 @@ public class CadastrarClienteController {
 
     private void IniciarController() {
 
-        view.getBtSalvar().addActionListener(e -> Cadastrar());
+        view.getBtSalvarCliente().addActionListener(e -> Cadastrar());
 
     }
 
     private void Cadastrar() {
-        String Nome = view.GetNome().trim();
-        String Email = view.GetEmail().trim();
-        String Cpf = view.GetCpf().trim();
-        String Telefone = view.GetTelefone().trim();
-        String Endereco = view.GetEndereco().trim();
+        String Nome = view.GetNomeCliente().trim();
+        String Email = view.GetEmailCliente().trim();
+        String Cpf = view.GetCpfCliente().trim();
+        String Telefone = view.GetTelefoneCliente().trim();
+        String Endereco = view.GetEnderecoCliente().trim();
 
         System.out.println("Cadastrar ACIONADO");
 
@@ -63,7 +63,7 @@ public class CadastrarClienteController {
         }
 
         boolean sucesso = service.Cadastrar(Nome, Email, Telefone, Endereco, Cpf);
-        view.AtivarBarraProgresso().setValue(100);
+        view.AtivarBarraProgressoCliente().setValue(100);
         Timestamp DataCadastro = new Timestamp(System.currentTimeMillis());
 
         view.RetornoDadosCliente(Nome, Email, Telefone, Endereco, Cpf, DataCadastro.toString());
