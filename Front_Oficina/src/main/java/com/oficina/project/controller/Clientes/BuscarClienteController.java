@@ -27,12 +27,12 @@ public class BuscarClienteController {
 
     private void iniciarController() {
         //Metodo que pega oque for digitado\/
-        view.getCampoPesquisar().addKeyListener(new KeyAdapter() {
+        view.getCampoPesquisarCliente().addKeyListener(new KeyAdapter() {
             @Override
             public void keyReleased(KeyEvent e) {
 
                 //\/ pega oque foi digitado no campo de pesquisa e envia para o service
-                String DTO = view.getCampoPesquisar().getText().trim();
+                String DTO = view.getCampoPesquisarCliente().getText().trim();
                 System.out.println("Buscando: " + DTO);//teste de iniciamento
                 //\/Lista armazena os dados recebidos do banco de dados
                 List<Clientes> resultados = service.BuscarCliente(DTO);
@@ -44,7 +44,7 @@ public class BuscarClienteController {
 
     private void atualizarTabela(List<Clientes> lista) {
         //\/ obtem o modelo da tabela para construção
-        DefaultTableModel modelo = (DefaultTableModel) view.getTabelaUsuarios().getModel();
+        DefaultTableModel modelo = (DefaultTableModel) view.getTabelaCliente().getModel();
         modelo.setRowCount(0);//limpa a tabela
 
         //\/percorre todos os dados e inseri na tabela
@@ -68,7 +68,7 @@ public class BuscarClienteController {
     }
 
     public void ClienteSelecionado(int linha) {
-        JTable tabela = view.getTabelaUsuarios();
+        JTable tabela = view.getTabelaCliente();
 
         String id = valorCelula(tabela, linha, 0);
         String nome = valorCelula(tabela, linha, 1);
@@ -80,7 +80,7 @@ public class BuscarClienteController {
         String dataAtualizacao = valorCelula(tabela, linha, 7);
        
 
-        view.InfoUsuario(id, nome, email, cpf, telefone, Endereco, data, dataAtualizacao);
+        view.InfoCliente(id, nome, email, cpf, telefone, Endereco, data, dataAtualizacao);
     }
 
 }
