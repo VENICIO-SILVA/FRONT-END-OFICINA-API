@@ -950,11 +950,11 @@
             <Property name="iconifiable" type="boolean" value="true"/>
             <Property name="maximizable" type="boolean" value="true"/>
             <Property name="resizable" type="boolean" value="true"/>
-            <Property name="visible" type="boolean" value="false"/>
+            <Property name="visible" type="boolean" value="true"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="1520" height="830"/>
+              <AbsoluteConstraints x="10" y="0" width="1520" height="830"/>
             </Constraint>
           </Constraints>
 
@@ -970,54 +970,68 @@
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="LbPlacaCadastro" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                                      <Component id="LbCadastrarCor" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="CampoCorCadastrarCarros" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
-                                                  <Component id="CampoPlacaCadastroCarros" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
                                               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="LbAnoCadastro" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="LbMarcaCadastro" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="LbModeloCadastro" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="LbModeloCadastro" min="-2" pref="54" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                                      <Component id="LbMarcaCadastro" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
                                               </Group>
-                                              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="CampoAnoCadastroCarros" alignment="0" pref="370" max="32767" attributes="0"/>
-                                                  <Component id="CampoMarcaCadastroCarros" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="CampoModeloCadastroCarro" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                                              <Component id="LbAnoCadastro" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                              <Component id="jButton1" min="-2" pref="249" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
+                                              <Component id="IconeInformativo" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="CampoAnoCadastroCarros" alignment="1" min="-2" pref="370" max="-2" attributes="0"/>
+                                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="CampoModeloCadastroCarro" pref="370" max="32767" attributes="0"/>
+                                                      <Component id="CampoMarcaCadastroCarros" max="32767" attributes="0"/>
+                                                  </Group>
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
-                                          <Component id="jButton1" min="-2" pref="249" max="-2" attributes="0"/>
-                                          <EmptySpace pref="110" max="32767" attributes="0"/>
-                                          <Component id="IconeInformativo" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                                              <Component id="LbCadastrarCor" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="LbPlacaCadastro" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="CampoPlacaCadastroCarros" pref="97" max="32767" attributes="0"/>
+                                          <Component id="CampoCorCadastrarCarros" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="InternaResultado1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="InternaResultadoCarros" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="InternaEditarUsuario1" max="32767" attributes="0"/>
+                      <Component id="InternaEditarCarros" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -1036,36 +1050,41 @@
                                   </Group>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="CampoModeloCadastroCarro" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="LbModeloCadastro" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="LbModeloCadastro" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CampoModeloCadastroCarro" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="CampoMarcaCadastroCarros" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="LbMarcaCadastro" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CampoMarcaCadastroCarros" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="CampoAnoCadastroCarros" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="LbAnoCadastro" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="LbAnoCadastro" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="CampoAnoCadastroCarros" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="CampoPlacaCadastroCarros" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                      <Component id="LbPlacaCadastro" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="CampoCorCadastrarCarros" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LbCadastrarCor" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="CampoPlacaCadastroCarros" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="LbPlacaCadastro" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="LbCadastrarCor" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="CampoCorCadastrarCarros" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="BtSalvarCarro" min="-2" pref="35" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="InternaResultado1" min="-2" max="-2" attributes="0"/>
+                              <Component id="InternaResultadoCarros" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="InternaEditarUsuario1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="InternaEditarCarros" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -1144,7 +1163,7 @@
                 <Property name="text" type="java.lang.String" value="Modelo:"/>
               </Properties>
             </Component>
-            <Container class="javax.swing.JInternalFrame" name="InternaResultado1">
+            <Container class="javax.swing.JInternalFrame" name="InternaResultadoCarros">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -1167,7 +1186,7 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LbNomeResultado6" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="CampoResultadoCadastro" min="-2" pref="308" max="-2" attributes="0"/>
+                                          <Component id="CampoResultadoCadastroCarros" min="-2" pref="308" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="194" max="-2" attributes="0"/>
@@ -1176,7 +1195,7 @@
                                   </Group>
                                   <EmptySpace min="0" pref="82" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="BarraProgresso" alignment="1" max="32767" attributes="0"/>
+                              <Component id="BarraProgressoCarros" alignment="1" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -1214,7 +1233,7 @@
                                   </Group>
                                   <Component id="LbIdClienteCarros" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="CampoIdClienteCarros" min="-2" pref="29" max="-2" attributes="0"/>
+                                  <Component id="CampoResultadoIdClienteCarros" min="-2" pref="29" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -1232,7 +1251,7 @@
                               <Component id="LbresultadoClienteCarros" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="CampoResultadoClienteCarros" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="LbIdClienteCarros" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="CampoIdClienteCarros" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="CampoResultadoIdClienteCarros" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -1262,12 +1281,12 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="LbNomeResultado6" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="CampoResultadoCadastro" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="CampoResultadoCadastroCarros" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="BarraProgresso" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="BarraProgressoCarros" min="-2" pref="71" max="-2" attributes="0"/>
                           <EmptySpace pref="23" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -1320,14 +1339,14 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="CampoMarcaResultado">
                 </Component>
-                <Component class="javax.swing.JTextField" name="CampoResultadoCadastro">
+                <Component class="javax.swing.JTextField" name="CampoResultadoCadastroCarros">
                 </Component>
                 <Component class="javax.swing.JTextField" name="CampoResultadoPlaca">
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CampoResultadoPlacaActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JProgressBar" name="BarraProgresso">
+                <Component class="javax.swing.JProgressBar" name="BarraProgressoCarros">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="0" red="ff" type="rgb"/>
@@ -1369,6 +1388,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="CampoIdResultadoCarros">
+                  <Events>
+                    <EventHandler event="componentHidden" listener="java.awt.event.ComponentListener" parameters="java.awt.event.ComponentEvent" handler="CampoIdResultadoCarrosComponentHidden"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="LbresultadoClienteCarros">
                   <Properties>
@@ -1388,7 +1410,7 @@
                     <Property name="text" type="java.lang.String" value="ID:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="CampoIdClienteCarros">
+                <Component class="javax.swing.JTextField" name="CampoResultadoIdClienteCarros">
                 </Component>
               </SubComponents>
             </Container>
@@ -1400,7 +1422,7 @@
                 <Property name="text" type="java.lang.String" value="Marca:"/>
               </Properties>
             </Component>
-            <Container class="javax.swing.JInternalFrame" name="InternaEditarUsuario1">
+            <Container class="javax.swing.JInternalFrame" name="InternaEditarCarros">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="a7" green="b7" red="b7" type="rgb"/>
@@ -1434,21 +1456,21 @@
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                                  <Component id="BtEditar1" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="BtEditarCarro" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                                                  <Component id="BtExcluir1" min="-2" pref="79" max="-2" attributes="0"/>
+                                                  <Component id="BtExcluirCarro" min="-2" pref="79" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="IconPesquisarEditar" min="-2" max="-2" attributes="0"/>
+                                          <Component id="IconPesquisarEditarCarros" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="CampoPesquisarEditarCarros" max="32767" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="InternaDadosPesquisa1" max="32767" attributes="0"/>
+                                  <Component id="InternaInfoCarros" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1463,12 +1485,12 @@
                                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="CampoPesquisarEditarCarros" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="IconPesquisarEditar" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="IconPesquisarEditarCarros" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="BtEditar1" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="BtExcluir1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="BtEditarCarro" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="BtExcluirCarro" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -1478,7 +1500,7 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="InternaDadosPesquisa1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="InternaInfoCarros" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1512,7 +1534,7 @@
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                           <Table columnCount="9" rowCount="10">
                             <Column editable="true" title="Id" type="java.lang.Object"/>
-                            <Column editable="true" title="Nome" type="java.lang.Object"/>
+                            <Column editable="true" title="Cliente" type="java.lang.Object"/>
                             <Column editable="true" title="Modelo" type="java.lang.Object"/>
                             <Column editable="true" title="Marca" type="java.lang.Object"/>
                             <Column editable="true" title="Ano" type="java.lang.Object"/>
@@ -1534,7 +1556,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CampoPesquisarEditarCarrosActionPerformed"/>
                   </Events>
                 </Component>
-                <Container class="javax.swing.JInternalFrame" name="InternaDadosPesquisa1">
+                <Container class="javax.swing.JInternalFrame" name="InternaInfoCarros">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="99" green="99" red="99" type="rgb"/>
@@ -1561,16 +1583,6 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="LbInfoModelo" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="CampoInfoModelo" max="32767" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="CampoInfoCor" min="-2" pref="152" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="279" max="-2" attributes="0"/>
-                                  </Group>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
@@ -1588,16 +1600,16 @@
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="LbInfoDataAtualizacao1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="LbInfoDataAtualizacaoCarro" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                                      <Component id="LbInfoDataCadastro1" min="-2" pref="124" max="-2" attributes="0"/>
+                                                      <Component id="LbInfoDataCadastroCarro" min="-2" pref="124" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="CampoInfoDataCadastro1" alignment="0" min="-2" pref="343" max="-2" attributes="0"/>
-                                                  <Component id="CampoInfoDataAtualizacao1" alignment="0" min="-2" pref="343" max="-2" attributes="0"/>
+                                                  <Component id="CampoInfoDataCadastroCarro" alignment="0" min="-2" pref="343" max="-2" attributes="0"/>
+                                                  <Component id="CampoInfoDataAtualizacaoCarro" alignment="0" min="-2" pref="343" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
@@ -1607,14 +1619,32 @@
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                      <Component id="LbInfoNome3" min="-2" pref="56" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="CampoInfoId1" min="-2" pref="124" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="LbInfoModelo" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="CampoInfoModelo" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="LbInfoIdCarro" min="-2" pref="56" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="CampoInfoIdCarro" min="-2" pref="124" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="LbInfoIconeAlertaCarros" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="LbInfoIconeAlertaCarros" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="CampoInfoCor" min="-2" pref="52" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="322" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
                               </Group>
                           </Group>
@@ -1625,8 +1655,8 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="LbInfoNome3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="CampoInfoId1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="LbInfoIdCarro" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CampoInfoIdCarro" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="LbInfoIconeAlertaCarros" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -1653,13 +1683,13 @@
                               </Group>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="LbInfoDataCadastro1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="CampoInfoDataCadastro1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="LbInfoDataCadastroCarro" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CampoInfoDataCadastroCarro" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="LbInfoDataAtualizacao1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="CampoInfoDataAtualizacao1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="LbInfoDataAtualizacaoCarro" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CampoInfoDataAtualizacaoCarro" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
@@ -1683,7 +1713,7 @@
                         <Property name="text" type="java.lang.String" value="Marca:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="LbInfoDataCadastro1">
+                    <Component class="javax.swing.JLabel" name="LbInfoDataCadastroCarro">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="1"/>
@@ -1691,7 +1721,7 @@
                         <Property name="text" type="java.lang.String" value="Data de Cadastro:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="LbInfoDataAtualizacao1">
+                    <Component class="javax.swing.JLabel" name="LbInfoDataAtualizacaoCarro">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="1"/>
@@ -1699,15 +1729,15 @@
                         <Property name="text" type="java.lang.String" value="Data de Atualiza&#xe7;&#xe3;o:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="CampoInfoDataAtualizacao1">
+                    <Component class="javax.swing.JTextField" name="CampoInfoDataAtualizacaoCarro">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="CampoInfoDataCadastro1">
+                    <Component class="javax.swing.JTextField" name="CampoInfoDataCadastroCarro">
                     </Component>
                     <Component class="javax.swing.JTextField" name="CampoInfoModelo">
                     </Component>
                     <Component class="javax.swing.JTextField" name="CampoInfoCor">
                     </Component>
-                    <Component class="javax.swing.JLabel" name="LbInfoNome3">
+                    <Component class="javax.swing.JLabel" name="LbInfoIdCarro">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="14" style="1"/>
@@ -1715,9 +1745,9 @@
                         <Property name="text" type="java.lang.String" value="Cliente:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="CampoInfoId1">
+                    <Component class="javax.swing.JTextField" name="CampoInfoIdCarro">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CampoInfoId1ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CampoInfoIdCarroActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="LbInfoAno">
@@ -1771,27 +1801,27 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JButton" name="BtEditar1">
+                <Component class="javax.swing.JButton" name="BtEditarCarro">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/icones/editar.png"/>
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtEditar1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtEditarCarroActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="BtExcluir1">
+                <Component class="javax.swing.JButton" name="BtExcluirCarro">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/icones/excluir.png"/>
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtExcluir1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtExcluirCarroActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="IconPesquisarEditar">
+                <Component class="javax.swing.JLabel" name="IconPesquisarEditarCarros">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/icones/lupa.png"/>
