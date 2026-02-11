@@ -33,8 +33,9 @@ public class CadastrarCarrosController {
 
     private void Cadastrar() {
         
+        String NomeClienteVinculadoCarro = view.getNomeClienteVinculadoCarro().trim();
         String idCliente = view.GetIdClienteCarroVinculado().trim();
-        String Modelo = view.GetModelo().trim();
+        String Modelo = view.GetModeloCarro().trim();
         String Marca = view.GetMarca().trim();
         String Placa = view.GetPlaca().trim();
         String Cor = view.GetCor().trim();
@@ -62,11 +63,11 @@ public class CadastrarCarrosController {
             return;
         }
 
-        boolean sucesso = service.Cadastrar(idCliente, Modelo, Marca, Placa, Cor, Ano);
+        boolean sucesso = service.CadastrarCarro(idCliente, Modelo, Marca, Placa, Cor, Ano);
         view.AtivarBarraProgressoCarro();
         Timestamp agora = new Timestamp(System.currentTimeMillis());
         
-        view.RetornoDadosCarros(idCliente, Modelo, Marca, Placa, Cor, Ano, agora.toString());
+        view.RetornoDadosCarros(NomeClienteVinculadoCarro, idCliente, Modelo, Marca, Placa, Cor, Ano, agora.toString());
         JOptionPane.showMessageDialog(null, "Carro Cadastrado com sucesso!");
     }
 }
