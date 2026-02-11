@@ -16,7 +16,7 @@ public class CarrosService {
 
     public boolean CadastrarCarro(String idCliente, String modelo, String marca, String placa, String cor, String ano) {
         try {
-            URL url = new URL("http://localhost:8080/Carros/Cadastrar");
+            URL url = new URL("http://localhost:8080/Carros/Cadastrar/" + idCliente);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
             conn.setRequestMethod("POST");
