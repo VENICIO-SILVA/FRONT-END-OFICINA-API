@@ -24,21 +24,20 @@ public class CarrosService {
             conn.setDoOutput(true);
 
             String json = "{"
-                    + "\"id\":\"" + idCliente + "\","
-                    + "\"modelo\":\"" + Modelo + "\","
-                    + "\"email\":\"" + Marca + "\","
-                    + "\"placa\":\"" + Placa + "\","
-                    + "\"cor\":\"" + Cor + "\","
-                    + "\"ano\":\"" + Ano + "\""
-                    + "}".formatted(idCliente, Modelo, Marca, Placa, Cor, Ano);
+                    + "\"modelo\":\"" + modelo + "\","
+                    + "\"marca\":\"" + marca + "\","
+                    + "\"placa\":\"" + placa + "\","
+                    + "\"cor\":\"" + cor + "\","
+                    + "\"ano\":\"" + ano + "\""
+                    + "}";
 
             conn.getOutputStream().write(json.getBytes(StandardCharsets.UTF_8));
 
             int status = conn.getResponseCode();
-            return status == 200;
+            return status == HttpURLConnection.HTTP_OK;
 
         } catch (Exception e) {
-            System.out.println(e.toString());
+            System.out.println("Erro ao cadastrar carro: " + e);
             return false;
         }
     }
