@@ -18,11 +18,11 @@ import javax.swing.table.DefaultTableModel;
 public class BuscarClienteVincularCarroController {
 
     private final TelaVincularClienteCarros view;
-    private final CarroService service;
+    private final ClienteService service;
 
     public BuscarClienteVincularCarroController(TelaVincularClienteCarros view) {
         this.view = view;
-        this.service = new CarroService();
+        this.service = new ClienteService();
         iniciarController();
         System.out.println("CONTROLLER DE VINCULAR CLIENTE INICIADO");
     }
@@ -37,7 +37,7 @@ public class BuscarClienteVincularCarroController {
                 String DTO = view.getCampoPesquisarVincularCliente().getText().trim();
                 System.out.println("Buscando: " + DTO);//teste de iniciamento
                 //\/Lista armazena os dados recebidos do banco de dados
-                List<Clientes> resultados = service.BuscarClienteVincular(DTO);
+                List<Clientes> resultados = service.BuscarCliente(DTO);
                 //\/chama o metodo tabela e atualiza os dados na tabela do front
                 atualizarTabela(resultados);
             }
@@ -48,6 +48,7 @@ public class BuscarClienteVincularCarroController {
         //\/ obtem o modelo da tabela para construção
         DefaultTableModel modelo = (DefaultTableModel) view.getTabelaVincularClientes().getModel();
         modelo.setRowCount(0);//limpa a tabela
+        System.out.println("Qtd clientes: " + lista.size());
 
         //\/percorre todos os dados e inseri na tabela
         for (Clientes cli : lista) {
