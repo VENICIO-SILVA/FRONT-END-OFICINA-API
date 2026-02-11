@@ -14,7 +14,7 @@ import java.nio.charset.StandardCharsets;
  */
 public class CarrosService {
 
-    public boolean Cadastrar(String idCliente, String Modelo, String Marca, String Placa, String Cor, String Ano) {
+    public boolean CadastrarCarro(String idCliente, String modelo, String marca, String placa, String cor, String ano) {
         try {
             URL url = new URL("http://localhost:8080/Carros/Cadastrar");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
