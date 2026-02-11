@@ -158,8 +158,8 @@ public class TelaVincularClienteCarros extends javax.swing.JFrame {
     }//GEN-LAST:event_TabelaVincularClienteMouseClicked
 
     private void BotaoVincularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoVincularActionPerformed
-        String IdClienteSelecionado = CampoIdSelecionado.getText();
-        telaPrincipal.SetIdClienteCarro(IdClienteSelecionado); // usa a instância correta
+        telaPrincipal.SetIdClienteCarro(CampoIdSelecionado.getText());
+        telaPrincipal.SetNomeClienteCarroVinculado(CampoClienteSelecionado.getText());// usa a instância correta
         JOptionPane.showMessageDialog(null, "Cliente Vinculado Com Sucesso");
         this.dispose();
 
