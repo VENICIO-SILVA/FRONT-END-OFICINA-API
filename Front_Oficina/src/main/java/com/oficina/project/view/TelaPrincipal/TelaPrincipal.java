@@ -6,6 +6,7 @@ package com.oficina.project.view.TelaPrincipal;
 
 import com.oficina.project.controller.Administradores.BuscarAdmController;
 import com.oficina.project.controller.Administradores.CadastrarAdmController;
+import com.oficina.project.controller.Carros.BuscarCarroController;
 import com.oficina.project.controller.Clientes.BuscarClienteController;
 import com.oficina.project.view.TelaPrincipal.AdmViews.CadastrarAdmView;
 import com.oficina.project.view.TelaPrincipal.CarrosView.TelaVincularClienteCarros;
@@ -44,6 +45,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         //Carros
         new com.oficina.project.controller.Carros.CadastrarCarrosController(this);
         new com.oficina.project.controller.Carros.BuscarCarroController(this);
+        new com.oficina.project.controller.Carros.ExcluirCarroController(this);
 
         addComponentListener(new java.awt.event.ComponentAdapter() {
             @Override
@@ -176,7 +178,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         CampoInfoModelo = new javax.swing.JTextField();
         CampoInfoCor = new javax.swing.JTextField();
         LbInfoIdCarro = new javax.swing.JLabel();
-        CampoInfoIdCarro = new javax.swing.JTextField();
+        CampoInfoNomeClienteCarro = new javax.swing.JTextField();
         LbInfoAno = new javax.swing.JLabel();
         LbInfoCPF1 = new javax.swing.JLabel();
         CampoInfoAno = new javax.swing.JTextField();
@@ -184,6 +186,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         CampoInfoMarca = new javax.swing.JTextField();
         LbInfoIconeAlertaCarros = new javax.swing.JLabel();
+        InfoIdClienteCarros = new javax.swing.JLabel();
+        CampoInfoIdClienteVinculadoCarro = new javax.swing.JTextField();
+        InfoIdCarros = new javax.swing.JLabel();
+        CampoInfoIdCarro = new javax.swing.JTextField();
         BtEditarCarro = new javax.swing.JButton();
         BtExcluirCarro = new javax.swing.JButton();
         IconPesquisarEditarCarros = new javax.swing.JLabel();
@@ -871,19 +877,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TabelaCarros.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         TabelaCarros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Id", "Modelo", "Marca", "Ano", "Placa", "Cor", "Data de Cadastro", "Data de Atualização"
+                "Id", "Modelo", "Marca", "Ano", "Placa", "Cor", "Data de Cadastro", "Data de Atualização", "NomeCliente", "IdCliente"
             }
         ));
         TabelaCarros.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -919,9 +925,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         LbInfoIdCarro.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         LbInfoIdCarro.setText("Cliente:");
 
-        CampoInfoIdCarro.addActionListener(new java.awt.event.ActionListener() {
+        CampoInfoNomeClienteCarro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoInfoIdCarroActionPerformed(evt);
+                CampoInfoNomeClienteCarroActionPerformed(evt);
             }
         });
 
@@ -954,6 +960,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        InfoIdClienteCarros.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        InfoIdClienteCarros.setText("ID_CLIENTE:");
+
+        InfoIdCarros.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        InfoIdCarros.setText("ID:");
+
         javax.swing.GroupLayout InternaInfoCarrosLayout = new javax.swing.GroupLayout(InternaInfoCarros.getContentPane());
         InternaInfoCarros.getContentPane().setLayout(InternaInfoCarrosLayout);
         InternaInfoCarrosLayout.setHorizontalGroup(
@@ -970,7 +982,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                     .addComponent(LbInfoAno))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(InternaInfoCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(CampoInfoMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(InternaInfoCarrosLayout.createSequentialGroup()
+                                        .addComponent(CampoInfoMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(InfoIdCarros)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(CampoInfoIdCarro, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(CampoInfoAno, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(CampoInfoPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(InternaInfoCarrosLayout.createSequentialGroup()
@@ -996,10 +1013,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
                             .addGroup(InternaInfoCarrosLayout.createSequentialGroup()
                                 .addComponent(LbInfoIdCarro, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CampoInfoIdCarro, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(CampoInfoNomeClienteCarro, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(InternaInfoCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(InternaInfoCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InternaInfoCarrosLayout.createSequentialGroup()
+                                .addComponent(InfoIdClienteCarros)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CampoInfoIdClienteVinculadoCarro, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(LbInfoIconeAlertaCarros)
                                 .addGap(169, 169, 169))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InternaInfoCarrosLayout.createSequentialGroup()
@@ -1014,8 +1035,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(InternaInfoCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LbInfoIdCarro)
-                    .addComponent(CampoInfoIdCarro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LbInfoIconeAlertaCarros))
+                    .addComponent(CampoInfoNomeClienteCarro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LbInfoIconeAlertaCarros)
+                    .addComponent(InfoIdClienteCarros)
+                    .addComponent(CampoInfoIdClienteVinculadoCarro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(InternaInfoCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LbInfoModelo)
@@ -1025,7 +1048,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGap(8, 8, 8)
                 .addGroup(InternaInfoCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LbInfoMarca)
-                    .addComponent(CampoInfoMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CampoInfoMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(InfoIdCarros)
+                    .addComponent(CampoInfoIdCarro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(InternaInfoCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CampoInfoAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1479,6 +1504,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         if (linha == -1) {
             return;
         }
+         new BuscarCarroController(this).CarroSelecionado(linha);
     }//GEN-LAST:event_TabelaCarrosMouseClicked
 
     private void CampoPesquisarEditarCarrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoPesquisarEditarCarrosActionPerformed
@@ -1512,9 +1538,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 JOptionPane.WARNING_MESSAGE);
     }//GEN-LAST:event_LbInfoIconeAlertaCarrosMouseEntered
 
-    private void CampoInfoIdCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoInfoIdCarroActionPerformed
+    private void CampoInfoNomeClienteCarroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoInfoNomeClienteCarroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CampoInfoIdCarroActionPerformed
+    }//GEN-LAST:event_CampoInfoNomeClienteCarroActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         TelaVincularClienteCarros iniciar = new TelaVincularClienteCarros(this);
@@ -1636,9 +1662,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField CampoInfoEndereco;
     private javax.swing.JTextField CampoInfoId;
     private javax.swing.JTextField CampoInfoIdCarro;
+    private javax.swing.JTextField CampoInfoIdClienteVinculadoCarro;
     private javax.swing.JTextField CampoInfoMarca;
     private javax.swing.JTextField CampoInfoModelo;
     private javax.swing.JTextField CampoInfoNome;
+    private javax.swing.JTextField CampoInfoNomeClienteCarro;
     private javax.swing.JTextField CampoInfoPlaca;
     private javax.swing.JTextField CampoInfoTelefone;
     private javax.swing.JTextField CampoMarcaCadastroCarros;
@@ -1662,6 +1690,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel IconPesquisar;
     private javax.swing.JLabel IconPesquisarEditarCarros;
     private javax.swing.JLabel IconeInformativo;
+    private javax.swing.JLabel InfoIdCarros;
+    private javax.swing.JLabel InfoIdClienteCarros;
     public static javax.swing.JInternalFrame InternaCliente;
     private javax.swing.JInternalFrame InternaDadosPesquisa;
     private javax.swing.JInternalFrame InternaEditarCarros;
@@ -1817,7 +1847,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     public void RetornoDadosCarros( String idCliente, String Modelo, String Marca, String Placa, String Cor, String Ano, String DataCadastrado) {
         
-        this.CampoResultadoIdClienteCarros.setText(idCliente);
+        this.CampoResultadoClienteCarros.setText(this.NomeClienteCarro);
+        this.CampoResultadoIdClienteCarros.setText(this.IdClienteCarros);
         this.CampoIdResultadoCarros.setText(Ano);
         this.CampoModeloResultadoCarros.setText(Modelo);
         this.CampoMarcaResultado.setText(Marca);
