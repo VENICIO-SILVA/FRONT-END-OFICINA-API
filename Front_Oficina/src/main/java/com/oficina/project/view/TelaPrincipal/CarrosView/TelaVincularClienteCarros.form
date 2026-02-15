@@ -40,7 +40,7 @@
                           <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                           <Component id="LbClienteSelecionado" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="CampoClienteSelecionado" max="32767" attributes="0"/>
+                          <Component id="CampoNomeClienteSelecionado" max="32767" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="LbID" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -67,7 +67,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="LbClienteSelecionado" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="CampoClienteSelecionado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="CampoNomeClienteSelecionado" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="LbID" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="CampoIdSelecionado" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -137,7 +137,7 @@
         <Property name="text" type="java.lang.String" value="CLIENTE SELECIONADO:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="CampoClienteSelecionado">
+    <Component class="javax.swing.JTextField" name="CampoNomeClienteSelecionado">
     </Component>
     <Component class="javax.swing.JLabel" name="LbID">
       <Properties>

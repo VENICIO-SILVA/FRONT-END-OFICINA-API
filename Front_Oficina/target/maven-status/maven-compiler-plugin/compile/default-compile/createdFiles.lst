@@ -46,6 +46,7 @@ com\oficina\project\view\TelaPrincipal\TelaPrincipal$4.class
 com\oficina\project\view\TelaPrincipal\TelaPrincipal$1.class
 com\oficina\project\model\entities\OrdemServicoItens.class
 com\oficina\project\controller\Administradores\ApagarAdmController.class
+com\oficina\project\controller\Carros\ExcluirCarroController.class
 com\oficina\project\model\entities\Administradores.class
 com\oficina\project\controller\Administradores\CadastrarAdmController.class
 com\oficina\project\view\TelaPrincipal\TelaPrincipal$25.class

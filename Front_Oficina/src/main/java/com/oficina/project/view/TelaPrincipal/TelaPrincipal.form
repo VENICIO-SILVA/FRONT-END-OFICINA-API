@@ -1532,7 +1532,7 @@
                           <Font name="sansserif" size="12" style="1"/>
                         </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="8" rowCount="10">
+                          <Table columnCount="10" rowCount="10">
                             <Column editable="true" title="Id" type="java.lang.Object"/>
                             <Column editable="true" title="Modelo" type="java.lang.Object"/>
                             <Column editable="true" title="Marca" type="java.lang.Object"/>
@@ -1541,6 +1541,8 @@
                             <Column editable="true" title="Cor" type="java.lang.Object"/>
                             <Column editable="true" title="Data de Cadastro" type="java.lang.Object"/>
                             <Column editable="true" title="Data de Atualiza&#xe7;&#xe3;o" type="java.lang.Object"/>
+                            <Column editable="true" title="NomeCliente" type="java.lang.Object"/>
+                            <Column editable="true" title="IdCliente" type="java.lang.Object"/>
                           </Table>
                         </Property>
                       </Properties>
@@ -1592,7 +1594,13 @@
                                               </Group>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="CampoInfoMarca" min="-2" pref="152" max="-2" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="CampoInfoMarca" min="-2" pref="152" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="InfoIdCarros" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="CampoInfoIdCarro" min="-2" pref="31" max="-2" attributes="0"/>
+                                                  </Group>
                                                   <Component id="CampoInfoAno" min="-2" pref="236" max="-2" attributes="0"/>
                                                   <Component id="CampoInfoPlaca" min="-2" pref="166" max="-2" attributes="0"/>
                                               </Group>
@@ -1628,12 +1636,16 @@
                                           <Group type="102" alignment="1" attributes="0">
                                               <Component id="LbInfoIdCarro" min="-2" pref="56" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="CampoInfoIdCarro" min="-2" pref="124" max="-2" attributes="0"/>
+                                              <Component id="CampoInfoNomeClienteCarro" min="-2" pref="124" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Group type="102" alignment="1" attributes="0">
+                                              <Component id="InfoIdClienteCarros" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="CampoInfoIdClienteVinculadoCarro" min="-2" pref="31" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
                                               <Component id="LbInfoIconeAlertaCarros" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
                                           </Group>
@@ -1655,8 +1667,10 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="LbInfoIdCarro" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="CampoInfoIdCarro" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CampoInfoNomeClienteCarro" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="LbInfoIconeAlertaCarros" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="InfoIdClienteCarros" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CampoInfoIdClienteVinculadoCarro" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -1669,6 +1683,8 @@
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="LbInfoMarca" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="CampoInfoMarca" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="InfoIdCarros" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CampoInfoIdCarro" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -1744,9 +1760,9 @@
                         <Property name="text" type="java.lang.String" value="Cliente:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="CampoInfoIdCarro">
+                    <Component class="javax.swing.JTextField" name="CampoInfoNomeClienteCarro">
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CampoInfoIdCarroActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CampoInfoNomeClienteCarroActionPerformed"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="LbInfoAno">
@@ -1797,6 +1813,26 @@
                       <Events>
                         <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LbInfoIconeAlertaCarrosMouseEntered"/>
                       </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="InfoIdClienteCarros">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="12" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="ID_CLIENTE:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="CampoInfoIdClienteVinculadoCarro">
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="InfoIdCarros">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="12" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="ID:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="CampoInfoIdCarro">
                     </Component>
                   </SubComponents>
                 </Container>
