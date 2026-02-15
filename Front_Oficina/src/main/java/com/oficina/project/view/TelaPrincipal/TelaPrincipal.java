@@ -1864,14 +1864,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
         return BarraProgressoCarros;
     }
 
-    public void InfoCarros(String id, String nome, String email, String cpf, String telefone, String Endereco, String dataCadastro, String dataAtualizacao) {
-        this.CampoInfoIdCarro.setText(id);
-        this.CampoInfoModelo.setText(nome);
-        this.CampoInfoMarca.setText(email);
-        this.CampoInfoAno.setText(telefone);
-        this.CampoInfoPlaca.setText(cpf);
-        this.CampoInfoCor.setText(Endereco);
-        this.CampoInfoDataCadastro.setText(dataCadastro);
-        this.CampoInfoDataAtualizacao.setText(dataAtualizacao);
+    public void InfoCarros(String IdCliente, String NomeCLienteCarro, String idCarro, String modelo, String marca, String ano, String placa, String cor, String dataCadastro, String dataAtt) {
+        this.CampoInfoIdCarro.setText(idCarro);
+        this.CampoInfoModelo.setText(modelo);
+        this.CampoInfoMarca.setText(marca);
+        this.CampoInfoAno.setText(ano);
+        this.CampoInfoPlaca.setText(placa);
+        this.CampoInfoCor.setText(cor);
+        this.CampoInfoDataCadastroCarro.setText(dataCadastro);
+        this.CampoInfoDataAtualizacaoCarro.setText(dataAtt);
+        this.CampoInfoNomeClienteCarro.setText(NomeCLienteCarro);
+        this.CampoInfoIdClienteVinculadoCarro.setText(IdCliente);
+    }
+
+    public javax.swing.JButton getBtExlcuirCarro() {
+       return BtExcluirCarro;
+    }
+
+    public String GetIdCarro() {
+        return CampoInfoIdCarro.getText();
     }
 }
