@@ -39,9 +39,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         new com.oficina.project.controller.Clientes.BuscarClienteController(this);
         new com.oficina.project.controller.Clientes.CadastrarClienteController(this);
         new com.oficina.project.controller.Clientes.EditarClienteController(this);
+        
 
         //Carros
         new com.oficina.project.controller.Carros.CadastrarCarrosController(this);
+        new com.oficina.project.controller.Carros.BuscarCarroController(this);
 
         addComponentListener(new java.awt.event.ComponentAdapter() {
             @Override
@@ -795,8 +797,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                     .addComponent(CampoMarcaResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(InternaResultadoCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(CampoResultadoCorCarros, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
-                                        .addComponent(CampoAnoResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(CampoResultadoPlaca))
+                                        .addComponent(CampoResultadoPlaca)
+                                        .addComponent(CampoAnoResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(CampoModeloResultadoCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(InternaResultadoCarrosLayout.createSequentialGroup()
@@ -869,19 +871,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TabelaCarros.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         TabelaCarros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Id", "Cliente", "Modelo", "Marca", "Ano", "Placa", "Cor", "Data de Cadastro", "Data de Atualização"
+                "Id", "Modelo", "Marca", "Ano", "Placa", "Cor", "Data de Cadastro", "Data de Atualização"
             }
         ));
         TabelaCarros.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1809,11 +1811,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public String GetAnoCarro() {
         return CampoAnoCadastroCarros.getText();
     }
+    public JTable getTabelaCarros() {
+        return TabelaCarros;
+    }
 
-    public void RetornoDadosCarros(String nomeClinte, String idCliente, String Modelo, String Marca, String Placa, String Cor, String Ano, String DataCadastrado) {
-        this.CampoResultadoClienteCarros.setText(nomeClinte);
-        this.CampoResultadoIdClienteCarros.setText(Modelo);
-        this.CampoModeloResultadoCarros.setText(nomeClinte);
+    public void RetornoDadosCarros( String idCliente, String Modelo, String Marca, String Placa, String Cor, String Ano, String DataCadastrado) {
+        
+        this.CampoResultadoIdClienteCarros.setText(idCliente);
+        this.CampoIdResultadoCarros.setText(Ano);
+        this.CampoModeloResultadoCarros.setText(Modelo);
         this.CampoMarcaResultado.setText(Marca);
         this.CampoResultadoPlaca.setText(Placa);
         this.CampoResultadoCorCarros.setText(Cor);

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.oficina.project.controller.Carros;
 
 import com.oficina.project.service.CarrosService;
@@ -9,12 +5,9 @@ import com.oficina.project.view.TelaPrincipal.TelaPrincipal;
 import java.sql.Timestamp;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Venicio
- */
 public class CadastrarCarrosController {
-     private TelaPrincipal view;
+
+    private TelaPrincipal view;
     private CarrosService service;
 
     public CadastrarCarrosController(TelaPrincipal view) {
@@ -22,52 +15,108 @@ public class CadastrarCarrosController {
         this.service = new CarrosService();
         IniciarController();
         System.out.println("CONTROLLER Carros INICIADO");
-
     }
 
     private void IniciarController() {
-
         view.getBtSalvarCarro().addActionListener(e -> Cadastrar());
-
     }
 
     private void Cadastrar() {
-        
-        String NomeClienteVinculadoCarro = view.getNomeClienteVinculadoCarro().trim();
-        String idCliente = view.GetIdClienteCarroVinculado().trim();
-        String Modelo = view.GetModeloCarro().trim();
-        String Marca = view.GetMarca().trim();
-        String Placa = view.GetPlaca().trim();
-        String Cor = view.GetCor().trim();
-        String Ano = view.GetAnoCarro().trim();
+
         System.out.println("Cadastrar carro ACIONADO");
 
-       
-        if (Modelo.isBlank()) {
-            JOptionPane.showMessageDialog(null, "Por favor Informar o Modelo do Veiculo");
+        // 🔹 Pegando valores SEM trim()
+        String idCliente = view.GetIdClienteCarroVinculado();
+        String modelo = view.GetModeloCarro();
+        String marca = view.GetMarca();
+        String placa = view.GetPlaca();
+        String cor = view.GetCor();
+        String anoTexto = view.GetAnoCarro();
+
+        // 🔹 Validação Cliente
+        if (idCliente == null || idCliente.isBlank()) {
+            JOptionPane.showMessageDialog(null, 
+                "Vincule um cliente antes de cadastrar o carro");
             return;
         }
-        if (Marca.isBlank()) {
-            JOptionPane.showMessageDialog(null, "Por favor Informar a Marca do Veiculo");
+        idCliente = idCliente.trim();
+
+        // 🔹 Validação Modelo
+        if (modelo == null || modelo.isBlank()) {
+            JOptionPane.showMessageDialog(null, 
+                "Por favor informar o modelo do veículo");
             return;
         }
-        if (Placa.isBlank()) {
-            JOptionPane.showMessageDialog(null, "Por favor Informar a Placa do Veiculo");
+        modelo = modelo.trim();
+
+        // 🔹 Validação Marca
+        if (marca == null || marca.isBlank()) {
+            JOptionPane.showMessageDialog(null, 
+                "Por favor informar a marca do veículo");
             return;
         }
-        if (Cor.isBlank()) {
-            JOptionPane.showMessageDialog(null, "Por favor Informar a Cor do Veiculo");
+        marca = marca.trim();
+
+        // 🔹 Validação Placa
+        if (placa == null || placa.isBlank()) {
+            JOptionPane.showMessageDialog(null, 
+                "Por favor informar a placa do veículo");
             return;
-        } if (Ano.isBlank()) {
-            JOptionPane.showMessageDialog(null, "Por favor Informar o Ano do Veiculo");
+        }
+        placa = placa.trim();
+
+        // 🔹 Validação Cor
+        if (cor == null || cor.isBlank()) {
+            JOptionPane.showMessageDialog(null, 
+                "Por favor informar a cor do veículo");
+            return;
+        }
+        cor = cor.trim();
+
+        // 🔹 Validação Ano
+        if (anoTexto == null || anoTexto.isBlank()) {
+            JOptionPane.showMessageDialog(null, 
+                "Por favor informar o ano do veículo");
             return;
         }
 
-        boolean sucesso = service.CadastrarCarro(idCliente, Modelo, Marca, Placa, Cor, Ano);
+        int anoConvertido;
+
+        try {
+            anoConvertido = Integer.parseInt(anoTexto.trim());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, 
+                "O ano deve ser um número inteiro válido");
+            return;
+        }
+
+        if (anoConvertido < 1900 || anoConvertido > 2100) {
+            JOptionPane.showMessageDialog(null, 
+                "Informe um ano válido");
+            return;
+        }
+
+        // 🔹 Chamada do Service (agora passando int corretamente)
+        boolean sucesso = service.CadastrarCarro(
+                idCliente, modelo, marca, placa, cor, anoTexto);
+
+        if (!sucesso) {
+            JOptionPane.showMessageDialog(null, 
+                "Erro ao cadastrar carro no banco de dados");
+            return;
+        }
+
+        // 🔹 Atualizações visuais
         view.AtivarBarraProgressoCarro();
         Timestamp agora = new Timestamp(System.currentTimeMillis());
-        
-        view.RetornoDadosCarros(NomeClienteVinculadoCarro, idCliente, Modelo, Marca, Placa, Cor, Ano, agora.toString());
-        JOptionPane.showMessageDialog(null, "Carro Cadastrado com sucesso!");
+
+        view.RetornoDadosCarros(
+                idCliente, modelo, marca, placa, cor, 
+                String.valueOf(anoConvertido), 
+                agora.toString()
+        );
+
+        JOptionPane.showMessageDialog(null, 
+                "Carro cadastrado com sucesso!");
     }
 }

@@ -20,6 +20,7 @@ com\oficina\project\view\TelaPrincipal\ClienteViews\CadastrarClienteView$2.class
 com\oficina\project\view\TelaPrincipal\AdmViews\CadastrarAdmView$3.class
 com\oficina\project\view\TelaPrincipal\TelaPrincipal$11.class
 com\oficina\project\view\TelaPrincipal\TelaPrincipal$9.class
+com\oficina\project\service\CarroService$2.class
 com\oficina\project\model\entities\Carros.class
 com\oficina\project\view\TelaPrincipal\ClienteViews\CadastrarClienteView$6.class
 com\oficina\project\main\Main.class
@@ -40,6 +41,7 @@ com\oficina\project\view\Login\LoginView$1.class
 com\oficina\project\controller\Carros\CadastrarCarrosController.class
 com\oficina\project\view\TelaPrincipal\TelaPrincipal$24.class
 com\oficina\project\controller\Clientes\ExcluirClienteController.class
+com\oficina\project\controller\Carros\BuscarCarroController$1.class
 com\oficina\project\view\TelaPrincipal\TelaPrincipal$4.class
 com\oficina\project\view\TelaPrincipal\TelaPrincipal$1.class
 com\oficina\project\model\entities\OrdemServicoItens.class
@@ -60,6 +62,7 @@ com\oficina\project\view\TelaPrincipal\AdmViews\CadastrarAdmView$5.class
 com\oficina\project\view\TelaPrincipal\TelaPrincipal$7.class
 com\oficina\project\model\entities\OrdemServico.class
 com\oficina\project\view\TelaPrincipal\CarrosView\TelaVincularClienteCarros$1.class
+com\oficina\project\controller\Carros\BuscarCarroController.class
 com\oficina\project\controller\Administradores\BuscarAdmController.class
 com\oficina\project\view\TelaPrincipal\TelaPrincipal.class
 com\oficina\project\view\TelaPrincipal\TelaPrincipal$21.class
@@ -67,6 +70,7 @@ com\oficina\project\service\CarrosService.class
 com\oficina\project\view\TelaPrincipal\AdmViews\CadastrarAdmView$7.class
 com\oficina\project\view\TelaPrincipal\ClienteViews\CadastrarClienteView$5.class
 com\oficina\project\view\TelaPrincipal\TelaPrincipal$6.class
+com\oficina\project\view\TelaPrincipal\TelaPrincipal$28.class
 com\oficina\project\view\TelaPrincipal\AdmViews\CadastrarAdmView.class
 com\oficina\project\view\TelaPrincipal\TelaPrincipal$15.class
 com\oficina\project\view\TelaPrincipal\TelaPrincipal$20.class
