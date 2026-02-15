@@ -41,4 +41,26 @@ public class CarrosService {
             return false;
         }
     }
+
+    public boolean ApagarCarros(String DTO) {
+        try {
+            //abertura de conexao
+            URL url = new URL("http://localhost:8080/Carros/ApagarCarro/" + DTO);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("DELETE");
+            conn.setRequestProperty("Content-Type", "application/json");
+            conn.setDoOutput(true);
+
+            String json = "{"
+                    + "\"ID\":\"" + DTO + "\",".formatted(DTO);
+
+            conn.getOutputStream().write(json.getBytes(StandardCharsets.UTF_8));
+
+            int status = conn.getResponseCode();
+            return status == 200;
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return false;
+        }
+    }
 }
