@@ -110,10 +110,7 @@ public class CadastrarCarrosController {
         view.AtivarBarraProgressoCarro();
         Timestamp agora = new Timestamp(System.currentTimeMillis());
 
-        view.RetornoDadosCarros(
-                idCliente, modelo, marca, placa, cor, 
-                String.valueOf(anoConvertido), 
-                agora.toString()
+        view.RetornoDadosCarros(idCliente, modelo, marca, placa, cor,String.valueOf(anoConvertido),agora.toString()
         );
 
         JOptionPane.showMessageDialog(null, 
