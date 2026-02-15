@@ -2,81 +2,48 @@ package com.oficina.project.model.entities;
 
 public class Carros {
 
-    private Integer id;
+    private Integer idCarro;
     private String modelo;
     private String marca;
     private Integer ano;
     private String cor;
     private String placa;
-    private String DataCadastro;
-    private String DataAtualizacao;
+    private String dataCadastro;
+    private String dataAtualizacao;
 
-    public String getData_Cadastro() {
-        return DataCadastro;
-    }
+    // campos do cliente
+    private Integer idCliente;
+    private String nomeCliente;
 
-    public void setData_Cadastro(String data_Cadastro) {
-        this.DataCadastro = data_Cadastro;
-    }
+    public Carros() {}
 
-    public String getData_Atualizacao() {
-        return DataAtualizacao;
-    }
+    public Integer getIdCarros() { return idCarro; }
+    public void setId(Integer id) { this.idCarro = id; }
 
-    public void setData_Atualizacao(String data_Atualizacao) {
-        this.DataAtualizacao = data_Atualizacao;
-    }
+    public String getModelo() { return modelo; }
+    public void setModelo(String modelo) { this.modelo = modelo; }
 
-    // Construtor padrão (necessário para o Jackson)
-    public Carros() {
-    }
+    public String getMarca() { return marca; }
+    public void setMarca(String marca) { this.marca = marca; }
 
-    // Getters e Setters no padrão JavaBeans
-    public Integer getId() {
-        return id;
-    }
+    public Integer getAno() { return ano; }
+    public void setAno(Integer ano) { this.ano = ano; }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    public String getCor() { return cor; }
+    public void setCor(String cor) { this.cor = cor; }
 
-    public String getModelo() {
-        return modelo;
-    }
+    public String getPlaca() { return placa; }
+    public void setPlaca(String placa) { this.placa = placa; }
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
+    public String getDataCadastro() { return dataCadastro; }
+    public void setDataCadastro(String dataCadastro) { this.dataCadastro = dataCadastro; }
 
-    public String getMarca() {
-        return marca;
-    }
+    public String getDataAtualizacao() { return dataAtualizacao; }
+    public void setDataAtualizacao(String dataAtualizacao) { this.dataAtualizacao = dataAtualizacao; }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
+    public Integer getIdCliente() { return idCliente; }
+    public void setIdCliente(Integer idCliente) { this.idCliente = idCliente; }
 
-    public Integer getAno() {
-        return ano;
-    }
-
-    public void setAno(Integer ano) {
-        this.ano = ano;
-    }
-
-    public String getCor() {
-        return cor;
-    }
-
-    public void setCor(String cor) {
-        this.cor = cor;
-    }
-
-    public String getPlaca() {
-        return placa;
-    }
-
-    public void setPlaca(String placa) {
-        this.placa = placa;
-    }
+    public String getNomeCliente() { return nomeCliente; }
+    public void setNomeCliente(String nomeCliente) { this.nomeCliente = nomeCliente; }
 }
