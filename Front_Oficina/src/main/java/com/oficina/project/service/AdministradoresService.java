@@ -21,7 +21,7 @@ import java.util.List;
  */
 public class AdministradoresService {
 
-    public boolean Cadastrar(String Nome, String Email, String Senha, String Cargo, String Telefone) {
+    public boolean CadastrarADM(String Nome, String Email, String Senha, String Cargo, String Telefone) {
         try {
             URL url = new URL("http://localhost:8080/Administradores/Cadastrar");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -81,7 +81,7 @@ public class AdministradoresService {
         return List.of(); // retorna lista vazia se der erro
     }
 
-    public boolean ApagarUsuario(String DTO) {
+    public boolean ApagarADM(String DTO) {
         try {
             //abertura de conexao
             URL url = new URL("http://localhost:8080/Administradores/ExcluirUsuario/" + DTO);
@@ -104,7 +104,7 @@ public class AdministradoresService {
 
     }
 
-    public boolean EditarUsuario(String IdUsuario, String Nome, String Email, String Senha, String Cargo, String Telefone) {
+    public boolean EditarADM(String IdUsuario, String Nome, String Email, String Senha, String Cargo, String Telefone) {
         try {
             //abertura de conexao
             URL url = new URL("http://localhost:8080/Administradores/EditarUsuario/" + IdUsuario);
