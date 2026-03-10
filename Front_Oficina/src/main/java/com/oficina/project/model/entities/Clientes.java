@@ -10,88 +10,39 @@ public class Clientes {
     private String telefone;
     private String endereco;
     private String cpf;
-    private String data_cadastro;
-    private String data_atualizacao;
-    private List<OrdemServico> ordemServico;
-    //O json do back precisa desses campo no front
-    public List<OrdemServico> getOrdemServico() {
-        return ordemServico;
-    }
-    public void setOrdemServico(List<OrdemServico> ordemServico) {
-        this.ordemServico = ordemServico;
-    }
+    private String dataCadastro;     // ✅ camelCase
+    private String dataAtualizacao;  // ✅ camelCase
 
-    private List<Carros> carros;
+    private List<OrdemServico> ordemServico; // só se o back mandar
+    private List<Carros> carros;             // já vem convertido no back
 
-    public Integer getId() {
-        return id;
-    }
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
 
-    public String getNome() {
-        return nome;
-    }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+    public String getTelefone() { return telefone; }
+    public void setTelefone(String telefone) { this.telefone = telefone; }
 
-    public String getEmail() {
-        return email;
-    }
+    public String getEndereco() { return endereco; }
+    public void setEndereco(String endereco) { this.endereco = endereco; }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    public String getCpf() { return cpf; }
+    public void setCpf(String cpf) { this.cpf = cpf; }
 
-    public String getTelefone() {
-        return telefone;
-    }
+    public String getDataCadastro() { return dataCadastro; }
+    public void setDataCadastro(String dataCadastro) { this.dataCadastro = dataCadastro; }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
+    public String getDataAtualizacao() { return dataAtualizacao; }
+    public void setDataAtualizacao(String dataAtualizacao) { this.dataAtualizacao = dataAtualizacao; }
 
-    public String getEndereco() {
-        return endereco;
-    }
+    public List<OrdemServico> getOrdemServico() { return ordemServico; }
+    public void setOrdemServico(List<OrdemServico> ordemServico) { this.ordemServico = ordemServico; }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public String getData_cadastro() {
-        return data_cadastro;
-    }
-
-    public void setData_cadastro(String data_cadastro) {
-        this.data_cadastro = data_cadastro;
-    }
-
-    public String getData_atualizacao() {
-        return data_atualizacao;
-    }
-
-    public void setData_atualizacao(String data_atualizacao) {
-        this.data_atualizacao = data_atualizacao;
-    }
-
-    public List<Carros> getCarros() {
-        return carros;
-    }
-
-    public void setCarros(List<Carros> carros) {
-        this.carros = carros;
-    }
+    public List<Carros> getCarros() { return carros; }
+    public void setCarros(List<Carros> carros) { this.carros = carros; }
 }
