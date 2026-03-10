@@ -37,7 +37,7 @@ public class BuscarClienteVincularCarroController {
                 String DTO = view.getCampoPesquisarVincularCliente().getText().trim();
                 System.out.println("Buscando: " + DTO);//teste de iniciamento
                 //\/Lista armazena os dados recebidos do banco de dados
-                List<Clientes> resultados = service.BuscarCliente(DTO);
+                List<Clientes> resultados = service.buscarCliente(DTO);
                 //\/chama o metodo tabela e atualiza os dados na tabela do front
                 atualizarTabela(resultados);
             }

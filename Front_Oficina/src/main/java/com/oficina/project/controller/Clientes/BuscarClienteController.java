@@ -35,7 +35,7 @@ public class BuscarClienteController {
                 String DTO = view.getCampoPesquisarCliente().getText().trim();
                 System.out.println("Buscando: " + DTO);//teste de iniciamento
                 //\/Lista armazena os dados recebidos do banco de dados
-                List<Clientes> resultados = service.BuscarCliente(DTO);
+                List<Clientes> resultados = service.buscarCliente(DTO);
                 //\/chama o metodo tabela e atualiza os dados na tabela do front
                 atualizarTabela(resultados);
             }
@@ -56,8 +56,8 @@ public class BuscarClienteController {
                 cli.getCpf(),
                 cli.getTelefone(),
                 cli.getEndereco(),
-                cli.getData_cadastro(),
-                cli.getData_atualizacao()
+                cli.getDataCadastro(),
+                cli.getDataAtualizacao()
             });
         }
     }
