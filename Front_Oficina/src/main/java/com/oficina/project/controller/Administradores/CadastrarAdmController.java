@@ -5,10 +5,8 @@
 package com.oficina.project.controller.Administradores;
 
 import com.oficina.project.service.AdministradoresService;
-import com.oficina.project.view.TelaPrincipal.AdmViews.CadastrarAdmView;
+import com.oficina.project.view.TelaPrincipal.TelaPrincipal;
 import java.sql.Timestamp;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,29 +15,29 @@ import javax.swing.JOptionPane;
  */
 public class CadastrarAdmController {
 
-    private CadastrarAdmView view;
+    private TelaPrincipal view;
     private AdministradoresService service;
 
-    public CadastrarAdmController(CadastrarAdmView view) {
+    public CadastrarAdmController(TelaPrincipal view) {
         this.view = view;
         this.service = new AdministradoresService();
         IniciarController();
-        System.out.println("CONTROLLER INICIADO");
+        System.out.println("CONTROLLER INICIADO funcionario");
 
     }
 
     private void IniciarController() {
 
-        view.getBtSalvar().addActionListener(e -> Cadastrar());
+        view.getBtSalvarFuncionario().addActionListener(e -> CadastrarFuncionario());
 
     }
 
-    private void Cadastrar() {
-        String Nome = view.GetNome().trim();
-        String Email = view.GetEmail().trim();
-        String Senha = view.GetSenha().trim();
-        String Cargo = view.GetCargo().trim();
-        String Telefone = view.GetTelefone().trim();
+    private void CadastrarFuncionario() {
+        String Nome = view.GetNomeFuncionario().trim();
+        String Email = view.GetEmailFuncionario().trim();
+        String Senha = view.GetSenhaFuncionario().trim();
+        String Cargo = view.GetCargoFuncionario().trim();
+        String Telefone = view.GetTelefoneFuncionario().trim();
         System.out.println("Cadastrar ACIONADO");
 
         if (Nome.isBlank()) {
@@ -63,11 +61,11 @@ public class CadastrarAdmController {
             return;
         }
 
-        boolean sucesso = service.Cadastrar(Nome, Email, Senha, Cargo, Telefone);
-        view.AtivarBarraProgresso().setValue(100);
+        boolean sucesso = service.CadastrarADM(Nome, Email, Senha, Cargo, Telefone);
+        view.AtivarBarraProgressoFuncionario().setValue(100);
         Timestamp agora = new Timestamp(System.currentTimeMillis());
-        
-        view.RetornoDadosADM(Nome, Email, Senha, Telefone, Cargo, agora.toString());
+
+        view.RetornoDadosFuncionario(Nome, Email, Senha, Telefone, Cargo, agora.toString());
         JOptionPane.showMessageDialog(null, "Cliente Cadastrado com sucesso!");
     }
 }
