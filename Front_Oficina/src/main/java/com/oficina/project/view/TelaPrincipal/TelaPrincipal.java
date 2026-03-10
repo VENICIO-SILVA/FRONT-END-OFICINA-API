@@ -40,18 +40,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
         new com.oficina.project.controller.Clientes.BuscarClienteController(this);
         new com.oficina.project.controller.Clientes.CadastrarClienteController(this);
         new com.oficina.project.controller.Clientes.EditarClienteController(this);
-        
+        new com.oficina.project.controller.Clientes.ExcluirClienteController(this);
 
         //Carros
         new com.oficina.project.controller.Carros.CadastrarCarrosController(this);
         new com.oficina.project.controller.Carros.BuscarCarroController(this);
         new com.oficina.project.controller.Carros.ExcluirCarroController(this);
+        new com.oficina.project.controller.Carros.EditarCarroController(this);
+
+        //funcionario
+        new com.oficina.project.controller.Administradores.BuscarAdmController(this);
 
         addComponentListener(new java.awt.event.ComponentAdapter() {
             @Override
             public void componentResized(java.awt.event.ComponentEvent evt) {
                 // Redimensiona o JLabel
-                LOGO.setSize(TelaInterna.getSize());
+                InternaLogo.setSize(TelaInterna.getSize());
 
                 // Redimensiona o ícone da imagem
                 ImageIcon originalIcon = new ImageIcon(getClass().getResource("/icones/LogoOficina.png"));
@@ -60,7 +64,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         TelaInterna.getHeight(),
                         Image.SCALE_SMOOTH
                 );
-                LOGO.setIcon(new ImageIcon(scaledImage));
+                InternaLogo.setIcon(new ImageIcon(scaledImage));
             }
         });
 
@@ -84,17 +88,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         CampoTelefoneCadastroCliente = new javax.swing.JTextField();
         LbEnderecoCadastro = new javax.swing.JLabel();
         CampoEmailCadastroCliente = new javax.swing.JTextField();
-        LbNomeCadastro = new javax.swing.JLabel();
+        LbNomeCadastroCliente = new javax.swing.JLabel();
         LbEmailCadastro = new javax.swing.JLabel();
         CampoCpfCadastroCliente = new javax.swing.JTextField();
         CampoEnderecoCliente = new javax.swing.JTextField();
-        InternaResultado = new javax.swing.JInternalFrame();
-        LbNomeResultado = new javax.swing.JLabel();
-        LbNomeResultado1 = new javax.swing.JLabel();
-        LbNomeResultado2 = new javax.swing.JLabel();
-        LbNomeResultado3 = new javax.swing.JLabel();
-        LbNomeResultado4 = new javax.swing.JLabel();
-        LbNomeResultado5 = new javax.swing.JLabel();
+        InternaResultadoCliente = new javax.swing.JInternalFrame();
+        LbNomeResultadoCliente = new javax.swing.JLabel();
+        LbResultadoEmailCliente = new javax.swing.JLabel();
+        LbResultadoEnderecoCliente = new javax.swing.JLabel();
+        LbResultadoTelefoneCliente = new javax.swing.JLabel();
+        LbResultadoCpfCliente = new javax.swing.JLabel();
+        LbResultadoCadastroCliente = new javax.swing.JLabel();
         CampoNomeResultadoCliente = new javax.swing.JTextField();
         CampoEnderecoResultadoCliente = new javax.swing.JTextField();
         CampoEmailResultadoCliente = new javax.swing.JTextField();
@@ -104,29 +108,29 @@ public class TelaPrincipal extends javax.swing.JFrame {
         BarraProgressoCliente = new javax.swing.JProgressBar();
         LbResultaadoBarraCliente = new javax.swing.JLabel();
         LbTelefoneCadastro = new javax.swing.JLabel();
-        InternaEditarUsuario = new javax.swing.JInternalFrame();
+        InternaEditarCliente = new javax.swing.JInternalFrame();
         jScrollPane1 = new javax.swing.JScrollPane();
         TabelaClientes = new javax.swing.JTable();
-        CampoPesquisar = new javax.swing.JTextField();
-        InternaDadosPesquisa = new javax.swing.JInternalFrame();
+        CampoPesquisarCliente = new javax.swing.JTextField();
+        InternaDadosPesquisaCliente = new javax.swing.JInternalFrame();
         LbInfoEmail = new javax.swing.JLabel();
         LbInfoNome1 = new javax.swing.JLabel();
         LbInfotelefone = new javax.swing.JLabel();
         LbInfoDataCadastro = new javax.swing.JLabel();
         LbInfoDataAtualizacao = new javax.swing.JLabel();
-        CampoInfoDataAtualizacao = new javax.swing.JTextField();
-        CampoInfoDataCadastro = new javax.swing.JTextField();
-        CampoInfoNome = new javax.swing.JTextField();
-        CampoInfoEmail = new javax.swing.JTextField();
-        CampoInfoTelefone = new javax.swing.JTextField();
+        CampoInfoDataAtualizacaoCliente = new javax.swing.JTextField();
+        CampoInfoDataCadastroCliente = new javax.swing.JTextField();
+        CampoInfoNomeCliente = new javax.swing.JTextField();
+        CampoInfoEmailCliente = new javax.swing.JTextField();
+        CampoInfoTelefoneCliente = new javax.swing.JTextField();
         LbInfoNome2 = new javax.swing.JLabel();
-        CampoInfoId = new javax.swing.JTextField();
+        CampoInfoIdCliente = new javax.swing.JTextField();
         LbInfoEndereço = new javax.swing.JLabel();
         LbInfoCPF = new javax.swing.JLabel();
-        CampoInfoEndereco = new javax.swing.JTextField();
-        CampoInfoCPF = new javax.swing.JTextField();
-        BtEditar = new javax.swing.JButton();
-        BtExcluir = new javax.swing.JButton();
+        CampoInfoEnderecoCliente = new javax.swing.JTextField();
+        CampoInfoCPFCliente = new javax.swing.JTextField();
+        BtEditarCliente = new javax.swing.JButton();
+        BtExcluirCliente = new javax.swing.JButton();
         IconPesquisar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -157,8 +161,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         LbPlacaResultado1 = new javax.swing.JLabel();
         CampoResultadoCorCarros = new javax.swing.JTextField();
-        LbIdResultado = new javax.swing.JLabel();
-        CampoIdResultadoCarros = new javax.swing.JTextField();
         LbresultadoClienteCarros = new javax.swing.JLabel();
         CampoResultadoClienteCarros = new javax.swing.JTextField();
         LbIdClienteCarros = new javax.swing.JLabel();
@@ -202,7 +204,53 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        LOGO = new javax.swing.JLabel();
+        InternaFuncionarios = new javax.swing.JInternalFrame();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        ComboBoxFuncionario = new javax.swing.JComboBox<>();
+        BtCadastrarFuncionario = new javax.swing.JButton();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
+        BarraProgressoFuncionario = new javax.swing.JProgressBar();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jInternalFrame3 = new javax.swing.JInternalFrame();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        TabelaFuncionarios = new javax.swing.JTable();
+        InternaResultadoFuncionario = new javax.swing.JInternalFrame();
+        CampoInfoNomeFuncionario = new javax.swing.JTextField();
+        CampoInfoEmailFuncionario = new javax.swing.JTextField();
+        CampoInfoSenhaFuncionario = new javax.swing.JTextField();
+        CampoInfoCargoFuncionario = new javax.swing.JTextField();
+        CampoInfoTelefoneFuncionario = new javax.swing.JTextField();
+        CampoInfoDataCadastroFuncionario = new javax.swing.JTextField();
+        CampoInfoDataAttFuncionario = new javax.swing.JTextField();
+        CampoInfoIdFuncionario = new javax.swing.JTextField();
+        InfoNomeFuncionario = new javax.swing.JLabel();
+        InfoEmailFuncionario = new javax.swing.JLabel();
+        InfoSenhaFuncionario = new javax.swing.JLabel();
+        InfoTelefoneFuncionario = new javax.swing.JLabel();
+        InfoCargoFuncionario = new javax.swing.JLabel();
+        InfoDataCadastroFuncionario = new javax.swing.JLabel();
+        InfoDataDeAtualizacaoFuncionario = new javax.swing.JLabel();
+        InfoIdFuncionario = new javax.swing.JLabel();
+        IconeLupaPesquisarFuncionario = new javax.swing.JLabel();
+        CampoPesquisarFuncionario = new javax.swing.JTextField();
+        BtEditarFuncionario = new javax.swing.JButton();
+        BtExcluirFuncionario = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        CampoNomeFuncionario = new javax.swing.JTextField();
+        CampoEmailFuncionario = new javax.swing.JTextField();
+        CampoSenhaFuncionario = new javax.swing.JTextField();
+        CampoTelefoneFuncionario = new javax.swing.JTextField();
+        InternaLogo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         MenuServicos = new javax.swing.JMenu();
         MenuUsuarios = new javax.swing.JMenu();
@@ -255,33 +303,33 @@ public class TelaPrincipal extends javax.swing.JFrame {
         LbEnderecoCadastro.setFont(new java.awt.Font("sansserif", 3, 14)); // NOI18N
         LbEnderecoCadastro.setText("Endereço:");
 
-        LbNomeCadastro.setFont(new java.awt.Font("sansserif", 3, 14)); // NOI18N
-        LbNomeCadastro.setText("Nome:");
+        LbNomeCadastroCliente.setFont(new java.awt.Font("sansserif", 3, 14)); // NOI18N
+        LbNomeCadastroCliente.setText("Nome:");
 
         LbEmailCadastro.setFont(new java.awt.Font("sansserif", 3, 14)); // NOI18N
         LbEmailCadastro.setText("Email:");
 
-        InternaResultado.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "RESULTADO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        InternaResultado.setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/ICONECLIENTE.png"))); // NOI18N
-        InternaResultado.setVisible(true);
+        InternaResultadoCliente.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "RESULTADO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        InternaResultadoCliente.setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/ICONECLIENTE.png"))); // NOI18N
+        InternaResultadoCliente.setVisible(true);
 
-        LbNomeResultado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        LbNomeResultado.setText("Nome:");
+        LbNomeResultadoCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LbNomeResultadoCliente.setText("Nome:");
 
-        LbNomeResultado1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        LbNomeResultado1.setText("Email:");
+        LbResultadoEmailCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LbResultadoEmailCliente.setText("Email:");
 
-        LbNomeResultado2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        LbNomeResultado2.setText("Endereço:");
+        LbResultadoEnderecoCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LbResultadoEnderecoCliente.setText("Endereço:");
 
-        LbNomeResultado3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        LbNomeResultado3.setText("Telefone:");
+        LbResultadoTelefoneCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LbResultadoTelefoneCliente.setText("Telefone:");
 
-        LbNomeResultado4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        LbNomeResultado4.setText("CPF:");
+        LbResultadoCpfCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LbResultadoCpfCliente.setText("CPF:");
 
-        LbNomeResultado5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        LbNomeResultado5.setText("Cadastrado em:");
+        LbResultadoCadastroCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LbResultadoCadastroCliente.setText("Cadastrado em:");
 
         BarraProgressoCliente.setForeground(new java.awt.Color(255, 0, 51));
         BarraProgressoCliente.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "PROGRESSO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
@@ -290,73 +338,73 @@ public class TelaPrincipal extends javax.swing.JFrame {
         LbResultaadoBarraCliente.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         LbResultaadoBarraCliente.setText("RESULTADO:");
 
-        javax.swing.GroupLayout InternaResultadoLayout = new javax.swing.GroupLayout(InternaResultado.getContentPane());
-        InternaResultado.getContentPane().setLayout(InternaResultadoLayout);
-        InternaResultadoLayout.setHorizontalGroup(
-            InternaResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(InternaResultadoLayout.createSequentialGroup()
+        javax.swing.GroupLayout InternaResultadoClienteLayout = new javax.swing.GroupLayout(InternaResultadoCliente.getContentPane());
+        InternaResultadoCliente.getContentPane().setLayout(InternaResultadoClienteLayout);
+        InternaResultadoClienteLayout.setHorizontalGroup(
+            InternaResultadoClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InternaResultadoClienteLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(InternaResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(InternaResultadoLayout.createSequentialGroup()
-                        .addComponent(LbNomeResultado1)
+                .addGroup(InternaResultadoClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(InternaResultadoClienteLayout.createSequentialGroup()
+                        .addComponent(LbResultadoEmailCliente)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(CampoEmailResultadoCliente))
-                    .addGroup(InternaResultadoLayout.createSequentialGroup()
-                        .addGroup(InternaResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(InternaResultadoLayout.createSequentialGroup()
-                                .addComponent(LbNomeResultado5)
+                    .addGroup(InternaResultadoClienteLayout.createSequentialGroup()
+                        .addGroup(InternaResultadoClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(InternaResultadoClienteLayout.createSequentialGroup()
+                                .addComponent(LbResultadoCadastroCliente)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(CampoResultadoCadastroCliente))
-                            .addGroup(InternaResultadoLayout.createSequentialGroup()
-                                .addComponent(LbNomeResultado3)
+                            .addGroup(InternaResultadoClienteLayout.createSequentialGroup()
+                                .addComponent(LbResultadoTelefoneCliente)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(CampoTelefoneResultadoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(InternaResultadoLayout.createSequentialGroup()
-                                .addComponent(LbNomeResultado)
+                            .addGroup(InternaResultadoClienteLayout.createSequentialGroup()
+                                .addComponent(LbNomeResultadoCliente)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(CampoNomeResultadoCliente))
-                            .addGroup(InternaResultadoLayout.createSequentialGroup()
-                                .addGroup(InternaResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(LbNomeResultado2)
-                                    .addComponent(LbNomeResultado4))
+                            .addGroup(InternaResultadoClienteLayout.createSequentialGroup()
+                                .addGroup(InternaResultadoClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(LbResultadoEnderecoCliente)
+                                    .addComponent(LbResultadoCpfCliente))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(InternaResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(InternaResultadoClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(CampoEnderecoResultadoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(CampoResultadoCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(60, 60, 60))
-            .addGroup(InternaResultadoLayout.createSequentialGroup()
+            .addGroup(InternaResultadoClienteLayout.createSequentialGroup()
                 .addGap(217, 217, 217)
                 .addComponent(LbResultaadoBarraCliente)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(BarraProgressoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        InternaResultadoLayout.setVerticalGroup(
-            InternaResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(InternaResultadoLayout.createSequentialGroup()
+        InternaResultadoClienteLayout.setVerticalGroup(
+            InternaResultadoClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InternaResultadoClienteLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(InternaResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LbNomeResultado)
+                .addGroup(InternaResultadoClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LbNomeResultadoCliente)
                     .addComponent(CampoNomeResultadoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(InternaResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LbNomeResultado1)
+                .addGroup(InternaResultadoClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LbResultadoEmailCliente)
                     .addComponent(CampoEmailResultadoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(InternaResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LbNomeResultado3)
+                .addGroup(InternaResultadoClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LbResultadoTelefoneCliente)
                     .addComponent(CampoTelefoneResultadoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(InternaResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LbNomeResultado2)
+                .addGroup(InternaResultadoClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LbResultadoEnderecoCliente)
                     .addComponent(CampoEnderecoResultadoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(InternaResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LbNomeResultado4)
+                .addGroup(InternaResultadoClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LbResultadoCpfCliente)
                     .addComponent(CampoResultadoCpfCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(InternaResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LbNomeResultado5)
+                .addGroup(InternaResultadoClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LbResultadoCadastroCliente)
                     .addComponent(CampoResultadoCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addComponent(LbResultaadoBarraCliente)
@@ -368,10 +416,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         LbTelefoneCadastro.setFont(new java.awt.Font("sansserif", 3, 14)); // NOI18N
         LbTelefoneCadastro.setText("Telefone:");
 
-        InternaEditarUsuario.setBackground(new java.awt.Color(183, 183, 167));
-        InternaEditarUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "EDITAR INFORMAÇÕES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 14))); // NOI18N
-        InternaEditarUsuario.setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/ICONECLIENTE.png"))); // NOI18N
-        InternaEditarUsuario.setVisible(true);
+        InternaEditarCliente.setBackground(new java.awt.Color(183, 183, 167));
+        InternaEditarCliente.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "EDITAR INFORMAÇÕES", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 14))); // NOI18N
+        InternaEditarCliente.setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/ICONECLIENTE.png"))); // NOI18N
+        InternaEditarCliente.setVisible(true);
 
         TabelaClientes.setBackground(new java.awt.Color(204, 204, 204));
         TabelaClientes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -400,17 +448,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(TabelaClientes);
 
-        CampoPesquisar.addActionListener(new java.awt.event.ActionListener() {
+        CampoPesquisarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoPesquisarActionPerformed(evt);
+                CampoPesquisarClienteActionPerformed(evt);
             }
         });
 
-        InternaDadosPesquisa.setBackground(new java.awt.Color(153, 153, 153));
-        InternaDadosPesquisa.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Informações de Usuario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        InternaDadosPesquisa.setForeground(new java.awt.Color(204, 204, 204));
-        InternaDadosPesquisa.setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/usuario.png"))); // NOI18N
-        InternaDadosPesquisa.setVisible(true);
+        InternaDadosPesquisaCliente.setBackground(new java.awt.Color(153, 153, 153));
+        InternaDadosPesquisaCliente.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Informações de Usuario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        InternaDadosPesquisaCliente.setForeground(new java.awt.Color(204, 204, 204));
+        InternaDadosPesquisaCliente.setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/usuario.png"))); // NOI18N
+        InternaDadosPesquisaCliente.setVisible(true);
 
         LbInfoEmail.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         LbInfoEmail.setText("Email:");
@@ -436,106 +484,106 @@ public class TelaPrincipal extends javax.swing.JFrame {
         LbInfoCPF.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         LbInfoCPF.setText("CPF:");
 
-        CampoInfoCPF.addActionListener(new java.awt.event.ActionListener() {
+        CampoInfoCPFCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CampoInfoCPFActionPerformed(evt);
+                CampoInfoCPFClienteActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout InternaDadosPesquisaLayout = new javax.swing.GroupLayout(InternaDadosPesquisa.getContentPane());
-        InternaDadosPesquisa.getContentPane().setLayout(InternaDadosPesquisaLayout);
-        InternaDadosPesquisaLayout.setHorizontalGroup(
-            InternaDadosPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(InternaDadosPesquisaLayout.createSequentialGroup()
+        javax.swing.GroupLayout InternaDadosPesquisaClienteLayout = new javax.swing.GroupLayout(InternaDadosPesquisaCliente.getContentPane());
+        InternaDadosPesquisaCliente.getContentPane().setLayout(InternaDadosPesquisaClienteLayout);
+        InternaDadosPesquisaClienteLayout.setHorizontalGroup(
+            InternaDadosPesquisaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InternaDadosPesquisaClienteLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(InternaDadosPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(InternaDadosPesquisaLayout.createSequentialGroup()
-                        .addGroup(InternaDadosPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(InternaDadosPesquisaLayout.createSequentialGroup()
+                .addGroup(InternaDadosPesquisaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(InternaDadosPesquisaClienteLayout.createSequentialGroup()
+                        .addGroup(InternaDadosPesquisaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(InternaDadosPesquisaClienteLayout.createSequentialGroup()
                                 .addGap(14, 14, 14)
-                                .addGroup(InternaDadosPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(InternaDadosPesquisaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(LbInfoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(LbInfoNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(InternaDadosPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(CampoInfoNome)
-                                    .addComponent(CampoInfoEmail)))
-                            .addGroup(InternaDadosPesquisaLayout.createSequentialGroup()
+                                .addGroup(InternaDadosPesquisaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(CampoInfoNomeCliente)
+                                    .addComponent(CampoInfoEmailCliente)))
+                            .addGroup(InternaDadosPesquisaClienteLayout.createSequentialGroup()
                                 .addComponent(LbInfotelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CampoInfoTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(CampoInfoTelefoneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(LbInfoNome2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CampoInfoId, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(CampoInfoIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(396, 396, 396))
-                    .addGroup(InternaDadosPesquisaLayout.createSequentialGroup()
-                        .addGroup(InternaDadosPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(InternaDadosPesquisaClienteLayout.createSequentialGroup()
+                        .addGroup(InternaDadosPesquisaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(LbInfoDataAtualizacao)
-                            .addGroup(InternaDadosPesquisaLayout.createSequentialGroup()
+                            .addGroup(InternaDadosPesquisaClienteLayout.createSequentialGroup()
                                 .addGap(14, 14, 14)
                                 .addComponent(LbInfoDataCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(InternaDadosPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CampoInfoDataCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CampoInfoDataAtualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(InternaDadosPesquisaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CampoInfoDataCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CampoInfoDataAtualizacaoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(InternaDadosPesquisaLayout.createSequentialGroup()
-                        .addGroup(InternaDadosPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(InternaDadosPesquisaClienteLayout.createSequentialGroup()
+                        .addGroup(InternaDadosPesquisaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(LbInfoCPF)
                             .addComponent(LbInfoEndereço))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(InternaDadosPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CampoInfoEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CampoInfoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(InternaDadosPesquisaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CampoInfoEnderecoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CampoInfoCPFCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
-        InternaDadosPesquisaLayout.setVerticalGroup(
-            InternaDadosPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(InternaDadosPesquisaLayout.createSequentialGroup()
+        InternaDadosPesquisaClienteLayout.setVerticalGroup(
+            InternaDadosPesquisaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InternaDadosPesquisaClienteLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(InternaDadosPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(InternaDadosPesquisaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LbInfoNome1)
-                    .addComponent(CampoInfoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CampoInfoNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LbInfoNome2)
-                    .addComponent(CampoInfoId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CampoInfoIdCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(InternaDadosPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(InternaDadosPesquisaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LbInfoEmail)
-                    .addComponent(CampoInfoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CampoInfoEmailCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(InternaDadosPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CampoInfoTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(InternaDadosPesquisaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CampoInfoTelefoneCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LbInfotelefone))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(InternaDadosPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(InternaDadosPesquisaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LbInfoEndereço)
-                    .addComponent(CampoInfoEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CampoInfoEnderecoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(InternaDadosPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(InternaDadosPesquisaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LbInfoCPF)
-                    .addComponent(CampoInfoCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CampoInfoCPFCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(InternaDadosPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(InternaDadosPesquisaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LbInfoDataCadastro)
-                    .addComponent(CampoInfoDataCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CampoInfoDataCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(InternaDadosPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(InternaDadosPesquisaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LbInfoDataAtualizacao)
-                    .addComponent(CampoInfoDataAtualizacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(CampoInfoDataAtualizacaoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        BtEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/editar.png"))); // NOI18N
-        BtEditar.addActionListener(new java.awt.event.ActionListener() {
+        BtEditarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/editar.png"))); // NOI18N
+        BtEditarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtEditarActionPerformed(evt);
+                BtEditarClienteActionPerformed(evt);
             }
         });
 
-        BtExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/excluir.png"))); // NOI18N
-        BtExcluir.addActionListener(new java.awt.event.ActionListener() {
+        BtExcluirCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/excluir.png"))); // NOI18N
+        BtExcluirCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtExcluirActionPerformed(evt);
+                BtExcluirClienteActionPerformed(evt);
             }
         });
 
@@ -547,57 +595,57 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("Excluir");
 
-        javax.swing.GroupLayout InternaEditarUsuarioLayout = new javax.swing.GroupLayout(InternaEditarUsuario.getContentPane());
-        InternaEditarUsuario.getContentPane().setLayout(InternaEditarUsuarioLayout);
-        InternaEditarUsuarioLayout.setHorizontalGroup(
-            InternaEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(InternaEditarUsuarioLayout.createSequentialGroup()
+        javax.swing.GroupLayout InternaEditarClienteLayout = new javax.swing.GroupLayout(InternaEditarCliente.getContentPane());
+        InternaEditarCliente.getContentPane().setLayout(InternaEditarClienteLayout);
+        InternaEditarClienteLayout.setHorizontalGroup(
+            InternaEditarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InternaEditarClienteLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(InternaEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(InternaEditarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
-                    .addGroup(InternaEditarUsuarioLayout.createSequentialGroup()
-                        .addGroup(InternaEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(InternaEditarUsuarioLayout.createSequentialGroup()
-                                .addGroup(InternaEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(InternaEditarUsuarioLayout.createSequentialGroup()
+                    .addGroup(InternaEditarClienteLayout.createSequentialGroup()
+                        .addGroup(InternaEditarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(InternaEditarClienteLayout.createSequentialGroup()
+                                .addGroup(InternaEditarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(InternaEditarClienteLayout.createSequentialGroup()
                                         .addGap(28, 28, 28)
                                         .addComponent(jLabel1)
                                         .addGap(90, 90, 90)
                                         .addComponent(jLabel2))
-                                    .addGroup(InternaEditarUsuarioLayout.createSequentialGroup()
+                                    .addGroup(InternaEditarClienteLayout.createSequentialGroup()
                                         .addGap(14, 14, 14)
-                                        .addComponent(BtEditar)
+                                        .addComponent(BtEditarCliente)
                                         .addGap(48, 48, 48)
-                                        .addComponent(BtExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(BtExcluirCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(143, 143, 143))
-                            .addGroup(InternaEditarUsuarioLayout.createSequentialGroup()
+                            .addGroup(InternaEditarClienteLayout.createSequentialGroup()
                                 .addComponent(IconPesquisar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CampoPesquisar)
+                                .addComponent(CampoPesquisarCliente)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                        .addComponent(InternaDadosPesquisa)))
+                        .addComponent(InternaDadosPesquisaCliente)))
                 .addContainerGap())
         );
-        InternaEditarUsuarioLayout.setVerticalGroup(
-            InternaEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(InternaEditarUsuarioLayout.createSequentialGroup()
-                .addGroup(InternaEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(InternaEditarUsuarioLayout.createSequentialGroup()
+        InternaEditarClienteLayout.setVerticalGroup(
+            InternaEditarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InternaEditarClienteLayout.createSequentialGroup()
+                .addGroup(InternaEditarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(InternaEditarClienteLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addGroup(InternaEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(CampoPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(InternaEditarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(CampoPesquisarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(IconPesquisar))
                         .addGap(26, 26, 26)
-                        .addGroup(InternaEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(BtEditar)
-                            .addComponent(BtExcluir))
+                        .addGroup(InternaEditarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(BtEditarCliente)
+                            .addComponent(BtExcluirCliente))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(InternaEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(InternaEditarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)))
-                    .addGroup(InternaEditarUsuarioLayout.createSequentialGroup()
+                    .addGroup(InternaEditarClienteLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(InternaDadosPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(InternaDadosPesquisaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
@@ -615,7 +663,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                 .addGap(23, 23, 23)
                                 .addGroup(InternaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(LbEmailCadastro)
-                                    .addComponent(LbNomeCadastro)))
+                                    .addComponent(LbNomeCadastroCliente)))
                             .addGroup(InternaClienteLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(LbTelefoneCadastro))
@@ -638,9 +686,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addComponent(BtSalvarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(InternaClienteLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(InternaResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(InternaResultadoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(InternaEditarUsuario)
+                .addComponent(InternaEditarCliente)
                 .addContainerGap())
         );
         InternaClienteLayout.setVerticalGroup(
@@ -650,7 +698,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addGroup(InternaClienteLayout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addGroup(InternaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(LbNomeCadastro)
+                            .addComponent(LbNomeCadastroCliente)
                             .addComponent(CampoNomeCadastroCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(InternaClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -671,8 +719,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(BtSalvarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(InternaResultado))
-                    .addComponent(InternaEditarUsuario))
+                        .addComponent(InternaResultadoCliente))
+                    .addComponent(InternaEditarCliente))
                 .addContainerGap())
         );
 
@@ -685,7 +733,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TelaInternaCadastrarCarros.setIconifiable(true);
         TelaInternaCadastrarCarros.setMaximizable(true);
         TelaInternaCadastrarCarros.setResizable(true);
-        TelaInternaCadastrarCarros.setVisible(true);
+        TelaInternaCadastrarCarros.setVisible(false);
 
         BtSalvarCarro.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         BtSalvarCarro.setText("Cadastrar Carro");
@@ -755,20 +803,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         LbPlacaResultado1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         LbPlacaResultado1.setText("Cor:");
 
-        LbIdResultado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        LbIdResultado.setText("ID:");
-
-        CampoIdResultadoCarros.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentHidden(java.awt.event.ComponentEvent evt) {
-                CampoIdResultadoCarrosComponentHidden(evt);
-            }
-        });
-
         LbresultadoClienteCarros.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         LbresultadoClienteCarros.setText("Cliente:");
 
         LbIdClienteCarros.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        LbIdClienteCarros.setText("ID:");
+        LbIdClienteCarros.setText("ID_CLIENTE:");
 
         javax.swing.GroupLayout InternaResultadoCarrosLayout = new javax.swing.GroupLayout(InternaResultadoCarros.getContentPane());
         InternaResultadoCarros.getContentPane().setLayout(InternaResultadoCarrosLayout);
@@ -786,41 +825,33 @@ public class TelaPrincipal extends javax.swing.JFrame {
                             .addGroup(InternaResultadoCarrosLayout.createSequentialGroup()
                                 .addGap(194, 194, 194)
                                 .addComponent(jLabel3)))
-                        .addGap(0, 82, Short.MAX_VALUE))
+                        .addGap(0, 107, Short.MAX_VALUE))
                     .addComponent(BarraProgressoCarros, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(InternaResultadoCarrosLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(InternaResultadoCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(InternaResultadoCarrosLayout.createSequentialGroup()
-                                .addGroup(InternaResultadoCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(LbAnoResultado)
-                                    .addComponent(LbMarcaResultado)
-                                    .addComponent(LbModeloResultado)
-                                    .addComponent(LbPlacaResultado)
-                                    .addComponent(LbPlacaResultado1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(InternaResultadoCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(CampoMarcaResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(InternaResultadoCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(CampoResultadoCorCarros, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
-                                        .addComponent(CampoResultadoPlaca)
-                                        .addComponent(CampoAnoResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(CampoModeloResultadoCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(InternaResultadoCarrosLayout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addComponent(LbIdResultado)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CampoIdResultadoCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(LbresultadoClienteCarros)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CampoResultadoClienteCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(9, 9, 9)))
-                        .addComponent(LbIdClienteCarros)
+                        .addGroup(InternaResultadoCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(LbAnoResultado)
+                            .addComponent(LbMarcaResultado)
+                            .addComponent(LbModeloResultado)
+                            .addComponent(LbPlacaResultado)
+                            .addComponent(LbPlacaResultado1)
+                            .addComponent(LbresultadoClienteCarros))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CampoResultadoIdClienteCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1)))
+                        .addGroup(InternaResultadoCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CampoMarcaResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(InternaResultadoCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(CampoResultadoCorCarros, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                                .addComponent(CampoResultadoPlaca)
+                                .addComponent(CampoAnoResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(InternaResultadoCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(InternaResultadoCarrosLayout.createSequentialGroup()
+                                    .addComponent(CampoResultadoClienteCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(LbIdClienteCarros)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(CampoResultadoIdClienteCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(CampoModeloResultadoCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(1, 255, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         InternaResultadoCarrosLayout.setVerticalGroup(
@@ -828,8 +859,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(InternaResultadoCarrosLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(InternaResultadoCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LbIdResultado)
-                    .addComponent(CampoIdResultadoCarros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LbresultadoClienteCarros)
                     .addComponent(CampoResultadoClienteCarros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LbIdClienteCarros)
@@ -997,9 +1026,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                         .addGap(14, 14, 14)
                                         .addComponent(LbInfoDataCadastroCarro, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(InternaInfoCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(CampoInfoDataCadastroCarro, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(CampoInfoDataAtualizacaoCarro, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(InternaInfoCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(CampoInfoDataAtualizacaoCarro, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
+                                    .addComponent(CampoInfoDataCadastroCarro)))
                             .addGroup(InternaInfoCarrosLayout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(LbInfoMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1099,7 +1128,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(InternaEditarCarrosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(InternaEditarCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 948, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 923, Short.MAX_VALUE)
                     .addGroup(InternaEditarCarrosLayout.createSequentialGroup()
                         .addGroup(InternaEditarCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(InternaEditarCarrosLayout.createSequentialGroup()
@@ -1256,13 +1285,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TelaInterna.add(TelaInternaCadastrarCarros);
         TelaInternaCadastrarCarros.setBounds(10, 0, 1520, 830);
 
-        TelaInternaServiços.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        TelaInternaServiços.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         TelaInternaServiços.setClosable(true);
         TelaInternaServiços.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         TelaInternaServiços.setResizable(true);
         TelaInternaServiços.setTitle("ARÉA DE SERVIÇOS");
         TelaInternaServiços.setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/servico-tecnico.png"))); // NOI18N
-        TelaInternaServiços.setVisible(true);
+        TelaInternaServiços.setVisible(false);
 
         jInternalFrame2.setClosable(true);
         jInternalFrame2.setIconifiable(true);
@@ -1336,9 +1365,421 @@ public class TelaPrincipal extends javax.swing.JFrame {
         TelaInterna.add(TelaInternaServiços);
         TelaInternaServiços.setBounds(10, 10, 400, 110);
 
-        LOGO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/LogoOficina.png"))); // NOI18N
-        TelaInterna.add(LOGO);
-        LOGO.setBounds(-3, -4, 1520, 840);
+        InternaFuncionarios.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "FUNCIONARIOS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
+        InternaFuncionarios.setClosable(true);
+        InternaFuncionarios.setIconifiable(true);
+        InternaFuncionarios.setMaximizable(true);
+        InternaFuncionarios.setResizable(true);
+        InternaFuncionarios.setVisible(true);
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setText("Nome:");
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel8.setText("Email:");
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setText("Senha:");
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel10.setText("Telefone:");
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel11.setText("Cargo:");
+
+        ComboBoxFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        ComboBoxFuncionario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Funcionario", "Administrador", " " }));
+        ComboBoxFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboBoxFuncionarioActionPerformed(evt);
+            }
+        });
+
+        BtCadastrarFuncionario.setText("Cadastrar");
+        BtCadastrarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtCadastrarFuncionarioActionPerformed(evt);
+            }
+        });
+
+        jInternalFrame1.setVisible(true);
+
+        BarraProgressoFuncionario.setForeground(new java.awt.Color(255, 0, 0));
+        BarraProgressoFuncionario.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Progresso", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        BarraProgressoFuncionario.setString("100");
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel14.setText("Email:");
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel15.setText("Nome:");
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel16.setText("Senha:");
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel17.setText("Telefone:");
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel18.setText("Cargo:");
+
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel19.setText("Cadastrado em:");
+
+        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
+        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
+        jInternalFrame1Layout.setHorizontalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(BarraProgressoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15)))
+                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jLabel18))
+                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel17))
+                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel19)))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+        jInternalFrame1Layout.setVerticalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(BarraProgressoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel19)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jInternalFrame3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "PESQUISA/EDIÇÃO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        jInternalFrame3.setVisible(true);
+
+        TabelaFuncionarios.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        TabelaFuncionarios.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "NOME", "LOGIN", "SENHA", "TELEFONE", " CARGO", "DATA_CADASTRO", "DATA_ATUALIZAÇÃO"
+            }
+        ));
+        TabelaFuncionarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TabelaFuncionariosMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(TabelaFuncionarios);
+
+        InternaResultadoFuncionario.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "INFORMAÇÕES PARA EDIÇÃO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        InternaResultadoFuncionario.setVisible(true);
+
+        CampoInfoDataAttFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoInfoDataAttFuncionarioActionPerformed(evt);
+            }
+        });
+
+        CampoInfoIdFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoInfoIdFuncionarioActionPerformed(evt);
+            }
+        });
+
+        InfoNomeFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        InfoNomeFuncionario.setText("Nome:");
+
+        InfoEmailFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        InfoEmailFuncionario.setText("Email:");
+
+        InfoSenhaFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        InfoSenhaFuncionario.setText("Senha:");
+
+        InfoTelefoneFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        InfoTelefoneFuncionario.setText("Telefone:");
+
+        InfoCargoFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        InfoCargoFuncionario.setText("Cargo:");
+
+        InfoDataCadastroFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        InfoDataCadastroFuncionario.setText("Data de Cadastro:");
+
+        InfoDataDeAtualizacaoFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        InfoDataDeAtualizacaoFuncionario.setText("Data de Atualização:");
+
+        InfoIdFuncionario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        InfoIdFuncionario.setText("ID:");
+
+        javax.swing.GroupLayout InternaResultadoFuncionarioLayout = new javax.swing.GroupLayout(InternaResultadoFuncionario.getContentPane());
+        InternaResultadoFuncionario.getContentPane().setLayout(InternaResultadoFuncionarioLayout);
+        InternaResultadoFuncionarioLayout.setHorizontalGroup(
+            InternaResultadoFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InternaResultadoFuncionarioLayout.createSequentialGroup()
+                .addGroup(InternaResultadoFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(InternaResultadoFuncionarioLayout.createSequentialGroup()
+                        .addGroup(InternaResultadoFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InternaResultadoFuncionarioLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(InternaResultadoFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(InfoCargoFuncionario)
+                                    .addComponent(InfoTelefoneFuncionario))
+                                .addGap(13, 13, 13))
+                            .addGroup(InternaResultadoFuncionarioLayout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addGroup(InternaResultadoFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(InfoEmailFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(InfoNomeFuncionario)
+                                    .addComponent(InfoSenhaFuncionario))))
+                        .addGroup(InternaResultadoFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(CampoInfoNomeFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                            .addComponent(CampoInfoEmailFuncionario)
+                            .addComponent(CampoInfoSenhaFuncionario)
+                            .addComponent(CampoInfoTelefoneFuncionario)
+                            .addComponent(CampoInfoCargoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(InfoIdFuncionario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(CampoInfoIdFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(InternaResultadoFuncionarioLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(InternaResultadoFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(InternaResultadoFuncionarioLayout.createSequentialGroup()
+                                .addComponent(InfoDataCadastroFuncionario)
+                                .addGap(24, 24, 24))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InternaResultadoFuncionarioLayout.createSequentialGroup()
+                                .addComponent(InfoDataDeAtualizacaoFuncionario)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGroup(InternaResultadoFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(CampoInfoDataCadastroFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)
+                            .addComponent(CampoInfoDataAttFuncionario))))
+                .addContainerGap(189, Short.MAX_VALUE))
+        );
+        InternaResultadoFuncionarioLayout.setVerticalGroup(
+            InternaResultadoFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InternaResultadoFuncionarioLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(InternaResultadoFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CampoInfoNomeFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CampoInfoIdFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(InfoNomeFuncionario)
+                    .addComponent(InfoIdFuncionario))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(InternaResultadoFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CampoInfoEmailFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(InfoEmailFuncionario))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(InternaResultadoFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CampoInfoSenhaFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(InfoSenhaFuncionario))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(InternaResultadoFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CampoInfoTelefoneFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(InfoTelefoneFuncionario))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(InternaResultadoFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CampoInfoCargoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(InfoCargoFuncionario))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(InternaResultadoFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(InfoDataCadastroFuncionario)
+                    .addComponent(CampoInfoDataCadastroFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addGroup(InternaResultadoFuncionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(InfoDataDeAtualizacaoFuncionario)
+                    .addComponent(CampoInfoDataAttFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(63, Short.MAX_VALUE))
+        );
+
+        IconeLupaPesquisarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/lupa.png"))); // NOI18N
+
+        BtEditarFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/editar.png"))); // NOI18N
+        BtEditarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtEditarFuncionarioActionPerformed(evt);
+            }
+        });
+
+        BtExcluirFuncionario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/excluir.png"))); // NOI18N
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel12.setText("MODIFICAR");
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel13.setText("DELETAR");
+
+        javax.swing.GroupLayout jInternalFrame3Layout = new javax.swing.GroupLayout(jInternalFrame3.getContentPane());
+        jInternalFrame3.getContentPane().setLayout(jInternalFrame3Layout);
+        jInternalFrame3Layout.setHorizontalGroup(
+            jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrame3Layout.createSequentialGroup()
+                .addGroup(jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jInternalFrame3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane3))
+                    .addGroup(jInternalFrame3Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jInternalFrame3Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addGroup(jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jInternalFrame3Layout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(BtEditarFuncionario))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                                .addGroup(jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(BtExcluirFuncionario, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addGroup(jInternalFrame3Layout.createSequentialGroup()
+                                .addComponent(IconeLupaPesquisarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CampoPesquisarFuncionario)))
+                        .addGap(18, 18, 18)
+                        .addComponent(InternaResultadoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(53, 53, 53)))
+                .addContainerGap())
+        );
+        jInternalFrame3Layout.setVerticalGroup(
+            jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame3Layout.createSequentialGroup()
+                .addGroup(jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jInternalFrame3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(CampoPesquisarFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(IconeLupaPesquisarFuncionario))
+                        .addGap(42, 42, 42)
+                        .addGroup(jInternalFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jInternalFrame3Layout.createSequentialGroup()
+                                .addComponent(BtEditarFuncionario)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel12))
+                            .addGroup(jInternalFrame3Layout.createSequentialGroup()
+                                .addComponent(BtExcluirFuncionario)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel13)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jInternalFrame3Layout.createSequentialGroup()
+                        .addComponent(InternaResultadoFuncionario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        CampoEmailFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoEmailFuncionarioActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout InternaFuncionariosLayout = new javax.swing.GroupLayout(InternaFuncionarios.getContentPane());
+        InternaFuncionarios.getContentPane().setLayout(InternaFuncionariosLayout);
+        InternaFuncionariosLayout.setHorizontalGroup(
+            InternaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(InternaFuncionariosLayout.createSequentialGroup()
+                .addGroup(InternaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(InternaFuncionariosLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(InternaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(InternaFuncionariosLayout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CampoSenhaFuncionario))
+                            .addGroup(InternaFuncionariosLayout.createSequentialGroup()
+                                .addGroup(InternaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(InternaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(CampoNomeFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CampoEmailFuncionario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(InternaFuncionariosLayout.createSequentialGroup()
+                                .addGroup(InternaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel10))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(InternaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(CampoTelefoneFuncionario)
+                                    .addGroup(InternaFuncionariosLayout.createSequentialGroup()
+                                        .addComponent(ComboBoxFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE)))))
+                        .addGap(20, 20, 20))
+                    .addGroup(InternaFuncionariosLayout.createSequentialGroup()
+                        .addGroup(InternaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(InternaFuncionariosLayout.createSequentialGroup()
+                                .addGap(111, 111, 111)
+                                .addComponent(BtCadastrarFuncionario))
+                            .addGroup(InternaFuncionariosLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jInternalFrame3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53))
+        );
+        InternaFuncionariosLayout.setVerticalGroup(
+            InternaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InternaFuncionariosLayout.createSequentialGroup()
+                .addGroup(InternaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(InternaFuncionariosLayout.createSequentialGroup()
+                        .addContainerGap(18, Short.MAX_VALUE)
+                        .addComponent(jInternalFrame3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(InternaFuncionariosLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(InternaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel7)
+                            .addComponent(CampoNomeFuncionario))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(InternaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addComponent(CampoEmailFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(InternaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(CampoSenhaFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(InternaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addComponent(CampoTelefoneFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(InternaFuncionariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(ComboBoxFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(44, 44, 44)
+                        .addComponent(BtCadastrarFuncionario)
+                        .addGap(18, 18, 18)
+                        .addComponent(jInternalFrame1)))
+                .addGap(29, 29, 29))
+        );
+
+        TelaInterna.add(InternaFuncionarios);
+        InternaFuncionarios.setBounds(10, 40, 1480, 810);
+
+        InternaLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/LogoOficina.png"))); // NOI18N
+        TelaInterna.add(InternaLogo);
+        InternaLogo.setBounds(0, 30, 1520, 840);
 
         jMenuBar1.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -1452,21 +1893,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO 
     }//GEN-LAST:event_MenuUsuariosActionPerformed
 
-    private void BtExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtExcluirActionPerformed
+    private void BtExcluirClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtExcluirClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BtExcluirActionPerformed
+    }//GEN-LAST:event_BtExcluirClienteActionPerformed
 
-    private void BtEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtEditarActionPerformed
+    private void BtEditarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtEditarClienteActionPerformed
         //
-    }//GEN-LAST:event_BtEditarActionPerformed
+    }//GEN-LAST:event_BtEditarClienteActionPerformed
 
-    private void CampoInfoCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoInfoCPFActionPerformed
+    private void CampoInfoCPFClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoInfoCPFClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CampoInfoCPFActionPerformed
+    }//GEN-LAST:event_CampoInfoCPFClienteActionPerformed
 
-    private void CampoPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoPesquisarActionPerformed
+    private void CampoPesquisarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoPesquisarClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CampoPesquisarActionPerformed
+    }//GEN-LAST:event_CampoPesquisarClienteActionPerformed
 
     private void TabelaClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaClientesMouseClicked
         int linha = TabelaClientes.getSelectedRow();
@@ -1504,7 +1945,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         if (linha == -1) {
             return;
         }
-         new BuscarCarroController(this).CarroSelecionado(linha);
+        new BuscarCarroController(this).CarroSelecionado(linha);
     }//GEN-LAST:event_TabelaCarrosMouseClicked
 
     private void CampoPesquisarEditarCarrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoPesquisarEditarCarrosActionPerformed
@@ -1547,11 +1988,39 @@ public class TelaPrincipal extends javax.swing.JFrame {
         iniciar.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void CampoIdResultadoCarrosComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_CampoIdResultadoCarrosComponentHidden
+    private void ComboBoxFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxFuncionarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CampoIdResultadoCarrosComponentHidden
+    }//GEN-LAST:event_ComboBoxFuncionarioActionPerformed
+
+    private void BtCadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtCadastrarFuncionarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtCadastrarFuncionarioActionPerformed
+
+    private void CampoEmailFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoEmailFuncionarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampoEmailFuncionarioActionPerformed
+
+    private void BtEditarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtEditarFuncionarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtEditarFuncionarioActionPerformed
+
+    private void CampoInfoIdFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoInfoIdFuncionarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampoInfoIdFuncionarioActionPerformed
+
+    private void CampoInfoDataAttFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoInfoDataAttFuncionarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampoInfoDataAttFuncionarioActionPerformed
+
+    private void TabelaFuncionariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabelaFuncionariosMouseClicked
+        int linha = TabelaFuncionarios.getSelectedRow();
+        if (linha == -1) {
+            return;
+            new BuscarAdmController(this).usuarioSelecionado(linha);
+        }
+    }//GEN-LAST:event_TabelaFuncionariosMouseClicked
     public String GetIdUsuarioCliente() {
-        return CampoInfoId.getText();
+        return CampoInfoIdCliente.getText();
     }
 
     public String GetNomeCliente() {
@@ -1576,14 +2045,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     public Map<String, String> InfoClienteEditar() {
         Map<String, String> dados = new HashMap<>();
-        dados.put("id", CampoInfoId.getText());
-        dados.put("Nome", CampoInfoNome.getText());
-        dados.put("email", CampoInfoEmail.getText());
-        dados.put("cpf", CampoInfoCPF.getText());
-        dados.put("telefone", CampoInfoTelefone.getText());
-        dados.put("endereco", CampoInfoEndereco.getText());
-        dados.put("dataCadastro", CampoInfoDataCadastro.getText());
-        dados.put("dataAtualizacao", CampoInfoDataAtualizacao.getText());
+        dados.put("id", CampoInfoIdCliente.getText());
+        dados.put("Nome", CampoInfoNomeCliente.getText());
+        dados.put("email", CampoInfoEmailCliente.getText());
+        dados.put("cpf", CampoInfoCPFCliente.getText());
+        dados.put("telefone", CampoInfoTelefoneCliente.getText());
+        dados.put("endereco", CampoInfoEnderecoCliente.getText());
+        dados.put("dataCadastro", CampoInfoDataCadastroCliente.getText());
+        dados.put("dataAtualizacao", CampoInfoDataAtualizacaoCliente.getText());
         return dados;
     }
 
@@ -1596,12 +2065,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         return BtSalvarCarro;
     }
 
-    public javax.swing.JButton getBtExlcuirCliente() {
-        return BtExcluir;
+    public javax.swing.JButton getBtExcluirCliente() {
+        return BtExcluirCliente;
     }
 
     public javax.swing.JButton getBtEditarCliente() {
-        return BtEditar;
+        return BtEditarCliente;
     }
 
     public JProgressBar AtivarBarraProgressoCliente() {
@@ -1636,10 +2105,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JProgressBar BarraProgressoCarros;
     private javax.swing.JProgressBar BarraProgressoCliente;
-    private javax.swing.JButton BtEditar;
+    private javax.swing.JProgressBar BarraProgressoFuncionario;
+    private javax.swing.JButton BtCadastrarFuncionario;
     private javax.swing.JButton BtEditarCarro;
-    private javax.swing.JButton BtExcluir;
+    private javax.swing.JButton BtEditarCliente;
+    private javax.swing.JButton BtEditarFuncionario;
     private javax.swing.JButton BtExcluirCarro;
+    private javax.swing.JButton BtExcluirCliente;
+    private javax.swing.JButton BtExcluirFuncionario;
     private javax.swing.JButton BtSalvarCarro;
     private javax.swing.JButton BtSalvarCliente;
     private javax.swing.JTextField CampoAnoCadastroCarros;
@@ -1647,36 +2120,46 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField CampoCorCadastrarCarros;
     private javax.swing.JTextField CampoCpfCadastroCliente;
     private javax.swing.JTextField CampoEmailCadastroCliente;
+    private javax.swing.JTextField CampoEmailFuncionario;
     private javax.swing.JTextField CampoEmailResultadoCliente;
     private javax.swing.JTextField CampoEnderecoCliente;
     private javax.swing.JTextField CampoEnderecoResultadoCliente;
-    private javax.swing.JTextField CampoIdResultadoCarros;
     private javax.swing.JTextField CampoInfoAno;
-    private javax.swing.JTextField CampoInfoCPF;
+    private javax.swing.JTextField CampoInfoCPFCliente;
+    private javax.swing.JTextField CampoInfoCargoFuncionario;
     private javax.swing.JTextField CampoInfoCor;
-    private javax.swing.JTextField CampoInfoDataAtualizacao;
+    private javax.swing.JTextField CampoInfoDataAttFuncionario;
     private javax.swing.JTextField CampoInfoDataAtualizacaoCarro;
-    private javax.swing.JTextField CampoInfoDataCadastro;
+    private javax.swing.JTextField CampoInfoDataAtualizacaoCliente;
     private javax.swing.JTextField CampoInfoDataCadastroCarro;
-    private javax.swing.JTextField CampoInfoEmail;
-    private javax.swing.JTextField CampoInfoEndereco;
-    private javax.swing.JTextField CampoInfoId;
+    private javax.swing.JTextField CampoInfoDataCadastroCliente;
+    private javax.swing.JTextField CampoInfoDataCadastroFuncionario;
+    private javax.swing.JTextField CampoInfoEmailCliente;
+    private javax.swing.JTextField CampoInfoEmailFuncionario;
+    private javax.swing.JTextField CampoInfoEnderecoCliente;
     private javax.swing.JTextField CampoInfoIdCarro;
+    private javax.swing.JTextField CampoInfoIdCliente;
     private javax.swing.JTextField CampoInfoIdClienteVinculadoCarro;
+    private javax.swing.JTextField CampoInfoIdFuncionario;
     private javax.swing.JTextField CampoInfoMarca;
     private javax.swing.JTextField CampoInfoModelo;
-    private javax.swing.JTextField CampoInfoNome;
+    private javax.swing.JTextField CampoInfoNomeCliente;
     private javax.swing.JTextField CampoInfoNomeClienteCarro;
+    private javax.swing.JTextField CampoInfoNomeFuncionario;
     private javax.swing.JTextField CampoInfoPlaca;
-    private javax.swing.JTextField CampoInfoTelefone;
+    private javax.swing.JTextField CampoInfoSenhaFuncionario;
+    private javax.swing.JTextField CampoInfoTelefoneCliente;
+    private javax.swing.JTextField CampoInfoTelefoneFuncionario;
     private javax.swing.JTextField CampoMarcaCadastroCarros;
     private javax.swing.JTextField CampoMarcaResultado;
     private javax.swing.JTextField CampoModeloCadastroCarro;
     private javax.swing.JTextField CampoModeloResultadoCarros;
     private javax.swing.JTextField CampoNomeCadastroCliente;
+    private javax.swing.JTextField CampoNomeFuncionario;
     private javax.swing.JTextField CampoNomeResultadoCliente;
-    private javax.swing.JTextField CampoPesquisar;
+    private javax.swing.JTextField CampoPesquisarCliente;
     private javax.swing.JTextField CampoPesquisarEditarCarros;
+    private javax.swing.JTextField CampoPesquisarFuncionario;
     private javax.swing.JTextField CampoPlacaCadastroCarros;
     private javax.swing.JTextField CampoResultadoCadastroCarros;
     private javax.swing.JTextField CampoResultadoCadastroCliente;
@@ -1685,22 +2168,36 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField CampoResultadoCpfCliente;
     private javax.swing.JTextField CampoResultadoIdClienteCarros;
     private javax.swing.JTextField CampoResultadoPlaca;
+    private javax.swing.JTextField CampoSenhaFuncionario;
     private javax.swing.JTextField CampoTelefoneCadastroCliente;
+    private javax.swing.JTextField CampoTelefoneFuncionario;
     private javax.swing.JTextField CampoTelefoneResultadoCliente;
+    private javax.swing.JComboBox<String> ComboBoxFuncionario;
     private javax.swing.JLabel IconPesquisar;
     private javax.swing.JLabel IconPesquisarEditarCarros;
     private javax.swing.JLabel IconeInformativo;
+    private javax.swing.JLabel IconeLupaPesquisarFuncionario;
+    private javax.swing.JLabel InfoCargoFuncionario;
+    private javax.swing.JLabel InfoDataCadastroFuncionario;
+    private javax.swing.JLabel InfoDataDeAtualizacaoFuncionario;
+    private javax.swing.JLabel InfoEmailFuncionario;
     private javax.swing.JLabel InfoIdCarros;
     private javax.swing.JLabel InfoIdClienteCarros;
+    private javax.swing.JLabel InfoIdFuncionario;
+    private javax.swing.JLabel InfoNomeFuncionario;
+    private javax.swing.JLabel InfoSenhaFuncionario;
+    private javax.swing.JLabel InfoTelefoneFuncionario;
     public static javax.swing.JInternalFrame InternaCliente;
-    private javax.swing.JInternalFrame InternaDadosPesquisa;
+    private javax.swing.JInternalFrame InternaDadosPesquisaCliente;
     private javax.swing.JInternalFrame InternaEditarCarros;
-    private javax.swing.JInternalFrame InternaEditarUsuario;
+    private javax.swing.JInternalFrame InternaEditarCliente;
+    private javax.swing.JInternalFrame InternaFuncionarios;
     private javax.swing.JInternalFrame InternaInfoCarros;
-    private javax.swing.JInternalFrame InternaResultado;
+    private javax.swing.JLabel InternaLogo;
     private javax.swing.JInternalFrame InternaResultadoCarros;
+    private javax.swing.JInternalFrame InternaResultadoCliente;
+    private javax.swing.JInternalFrame InternaResultadoFuncionario;
     private javax.swing.JMenu JMenuRelatorios;
-    private javax.swing.JLabel LOGO;
     private javax.swing.JLabel LbAnoCadastro;
     private javax.swing.JLabel LbAnoResultado;
     private javax.swing.JLabel LbCadastrarCor;
@@ -1708,7 +2205,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel LbEmailCadastro;
     private javax.swing.JLabel LbEnderecoCadastro;
     private javax.swing.JLabel LbIdClienteCarros;
-    private javax.swing.JLabel LbIdResultado;
     private javax.swing.JLabel LbInfoAno;
     private javax.swing.JLabel LbInfoCPF;
     private javax.swing.JLabel LbInfoCPF1;
@@ -1729,18 +2225,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel LbMarcaResultado;
     private javax.swing.JLabel LbModeloCadastro;
     private javax.swing.JLabel LbModeloResultado;
-    private javax.swing.JLabel LbNomeCadastro;
-    private javax.swing.JLabel LbNomeResultado;
-    private javax.swing.JLabel LbNomeResultado1;
-    private javax.swing.JLabel LbNomeResultado2;
-    private javax.swing.JLabel LbNomeResultado3;
-    private javax.swing.JLabel LbNomeResultado4;
-    private javax.swing.JLabel LbNomeResultado5;
+    private javax.swing.JLabel LbNomeCadastroCliente;
     private javax.swing.JLabel LbNomeResultado6;
+    private javax.swing.JLabel LbNomeResultadoCliente;
     private javax.swing.JLabel LbPlacaCadastro;
     private javax.swing.JLabel LbPlacaResultado;
     private javax.swing.JLabel LbPlacaResultado1;
     private javax.swing.JLabel LbResultaadoBarraCliente;
+    private javax.swing.JLabel LbResultadoCadastroCliente;
+    private javax.swing.JLabel LbResultadoCpfCliente;
+    private javax.swing.JLabel LbResultadoEmailCliente;
+    private javax.swing.JLabel LbResultadoEnderecoCliente;
+    private javax.swing.JLabel LbResultadoTelefoneCliente;
     private javax.swing.JLabel LbTelefoneCadastro;
     private javax.swing.JLabel LbresultadoClienteCarros;
     private javax.swing.JMenuItem MenuCarros;
@@ -1750,6 +2246,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public static javax.swing.JMenu MenuUsuarios;
     private javax.swing.JTable TabelaCarros;
     private javax.swing.JTable TabelaClientes;
+    private javax.swing.JTable TabelaFuncionarios;
     private javax.swing.JDesktopPane TelaInterna;
     private javax.swing.JInternalFrame TelaInternaCadastrarCarros;
     private javax.swing.JInternalFrame TelaInternaServiços;
@@ -1758,20 +2255,36 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JInternalFrame jInternalFrame2;
+    private javax.swing.JInternalFrame jInternalFrame3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     // End of variables declaration//GEN-END:variables
   public JTextField getCampoPesquisarCliente() {
-        return CampoPesquisar;
+        return CampoPesquisarCliente;
     }
 
     public JTable getTabelaCliente() {
@@ -1788,14 +2301,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     public void InfoCliente(String id, String nome, String email, String cpf, String telefone, String Endereco, String dataCadastro, String dataAtualizacao) {
-        this.CampoInfoId.setText(id);
-        this.CampoInfoNome.setText(nome);
-        this.CampoInfoEmail.setText(email);
-        this.CampoInfoTelefone.setText(telefone);
-        this.CampoInfoCPF.setText(cpf);
-        this.CampoInfoEndereco.setText(Endereco);
-        this.CampoInfoDataCadastro.setText(dataCadastro);
-        this.CampoInfoDataAtualizacao.setText(dataAtualizacao);
+        this.CampoInfoIdCliente.setText(id);
+        this.CampoInfoNomeCliente.setText(nome);
+        this.CampoInfoEmailCliente.setText(email);
+        this.CampoInfoTelefoneCliente.setText(telefone);
+        this.CampoInfoCPFCliente.setText(cpf);
+        this.CampoInfoEnderecoCliente.setText(Endereco);
+        this.CampoInfoDataCadastroCliente.setText(dataCadastro);
+        this.CampoInfoDataAtualizacaoCliente.setText(dataAtualizacao);
     }
 
     //AREA CARRO
@@ -1841,22 +2354,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public String GetAnoCarro() {
         return CampoAnoCadastroCarros.getText();
     }
+
     public JTable getTabelaCarros() {
         return TabelaCarros;
     }
 
-    public void RetornoDadosCarros( String idCliente, String Modelo, String Marca, String Placa, String Cor, String Ano, String DataCadastrado) {
-        
+    public void RetornoDadosCarros(String idCliente, String Modelo, String Marca, String Placa, String Cor, String Ano, String DataCadastrado) {
+
         this.CampoResultadoClienteCarros.setText(this.NomeClienteCarro);
         this.CampoResultadoIdClienteCarros.setText(this.IdClienteCarros);
-        this.CampoIdResultadoCarros.setText(Ano);
         this.CampoModeloResultadoCarros.setText(Modelo);
         this.CampoMarcaResultado.setText(Marca);
         this.CampoResultadoPlaca.setText(Placa);
         this.CampoResultadoCorCarros.setText(Cor);
         this.CampoAnoResultado.setText(Ano);
         this.CampoResultadoCadastroCarros.setText(DataCadastrado);
-        
 
     }
 
@@ -1878,10 +2390,72 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     public javax.swing.JButton getBtExlcuirCarro() {
-       return BtExcluirCarro;
+        return BtExcluirCarro;
     }
 
     public String GetIdCarro() {
         return CampoInfoIdCarro.getText();
+    }
+
+    public javax.swing.JButton getBtEditarCarro() {
+        return BtEditarCarro;
+    }
+
+    public Map<String, String> InfoCarroComDados() {
+        Map<String, String> dados = new HashMap<>();
+        dados.put("id", CampoInfoIdCarro.getText());
+        dados.put("modelo", CampoInfoModelo.getText());
+        dados.put("marca", CampoInfoMarca.getText());
+        dados.put("ano", CampoInfoAno.getText());
+        dados.put("placa", CampoInfoPlaca.getText());
+        dados.put("cor", CampoInfoCor.getText());
+        dados.put("dataCadastro", CampoInfoDataCadastroCarro.getText());
+        dados.put("dataAtualizacao", CampoInfoDataAtualizacaoCarro.getText());
+        return dados;
+    }
+
+    //AREA DA TELA INTERNA FUNCIONARIOS
+    public Object getBtSalvarFuncionario() {
+        return BtCadastrarFuncionario;
+    }
+
+    public Object GetNomeFuncionario() {
+        return CampoNomeFuncionario;
+    }
+
+    public Object GetEmailFuncionario() {
+        return CampoEmailFuncionario;
+    }
+
+    public Object GetSenhaFuncionario() {
+        return CampoSenhaFuncionario;
+    }
+
+    public Object GetCargoFuncionario() {
+        return ComboBoxFuncionario.getSelectedItem().toString();
+    }
+
+    public Object GetTelefoneFuncionario() {
+        return CampoTelefoneFuncionario;
+    }
+
+    public Object AtivarBarraProgressoFuncionario() {
+        return BarraProgressoFuncionario;
+    }
+
+    public void RetornoDadosFuncionario(String Nome, String Email, String Senha, String Telefone, String Cargo, String toString) {
+     this.Campo   
+    }
+
+    public Object getCampoPesquisarFuncionario() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object getTabelaFuncionarios() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void InfoFuncionarios(String id, String nome, String email, String senha, String telefone, String cargo, String data, String dataAtualizacao) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
