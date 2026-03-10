@@ -63,4 +63,33 @@ public class CarrosService {
             return false;
         }
     }
+public boolean EditarCarros(String IdCarro, String modelo, String marca, String ano, String cor, String placa) {
+        try {
+            //abertura de conexao
+            URL url = new URL("http://localhost:8080/Carros/Editar/" + IdCarro);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("PUT");
+            conn.setRequestProperty("Content-Type", "application/json");
+            conn.setDoOutput(true);
+
+            String json = "{"
+                    + "\"modelo\":\"" + modelo + "\","
+                    + "\"marca\":\"" + marca + "\","
+                    + "\"ano\":\"" + ano + "\","
+                    + "\"cor\":\"" + cor + "\","
+                    + "\"placa\":\"" + placa + "\""
+                    + "}".formatted(modelo, marca, ano, cor, placa);
+
+            conn.getOutputStream().write(json.getBytes(StandardCharsets.UTF_8));
+
+            int status = conn.getResponseCode();
+            return status == 200;
+
+        } catch (Exception e) {
+            System.out.println(e.toString());
+            return false;
+        }
+
+    }
+    
 }
