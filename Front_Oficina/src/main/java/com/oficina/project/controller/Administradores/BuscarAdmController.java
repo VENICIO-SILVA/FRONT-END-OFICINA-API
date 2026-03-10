@@ -3,6 +3,7 @@ package com.oficina.project.controller.Administradores;
 import com.oficina.project.view.TelaPrincipal.AdmViews.CadastrarAdmView;
 import com.oficina.project.model.entities.Administradores;
 import com.oficina.project.service.AdministradoresService;
+import com.oficina.project.view.TelaPrincipal.TelaPrincipal;
 
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.KeyAdapter;
@@ -12,10 +13,10 @@ import javax.swing.JTable;
 
 public class BuscarAdmController {
 
-    private final CadastrarAdmView view;
+    private final TelaPrincipal view;
     private final AdministradoresService service;
 
-    public BuscarAdmController(CadastrarAdmView view) {
+    public BuscarAdmController(TelaPrincipal view) {
         this.view = view;
         this.service = new AdministradoresService();
         iniciarController();
@@ -24,12 +25,12 @@ public class BuscarAdmController {
 
     private void iniciarController() {
         //Metodo que pega oque for digitado\/
-        view.getCampoPesquisar().addKeyListener(new KeyAdapter() {
+        view.getCampoPesquisarFuncionario().addKeyListener(new KeyAdapter() {
             @Override
             public void keyReleased(KeyEvent e) {
 
                 //\/ pega oque foi digitado no campo de pesquisa e envia para o service
-                String DTO = view.getCampoPesquisar().getText().trim();
+                String DTO = view.getCampoPesquisarFuncionario().getText().trim();
                 System.out.println("Buscando: " + DTO);//teste de iniciamento
                 //\/Lista armazena os dados recebidos do banco de dados
                 List<Administradores> resultados = service.BuscarAdministradores(DTO);
@@ -41,7 +42,7 @@ public class BuscarAdmController {
 
     private void atualizarTabela(List<Administradores> lista) {
         //\/ obtem o modelo da tabela para construção
-        DefaultTableModel modelo = (DefaultTableModel) view.getTabelaUsuarios().getModel();
+        DefaultTableModel modelo = (DefaultTableModel) view.getTabelaFuncionarios().getModel();
         modelo.setRowCount(0);//limpa a tabela
 
         //\/percorre todos os dados e inseri na tabela
@@ -64,8 +65,8 @@ public class BuscarAdmController {
         return valor != null ? valor.toString() : "";
     }
 
-    public void usuarioSelecionado(int linha) {
-        JTable tabela = view.getTabelaUsuarios();
+    public void FuncionariosSelecionado(int linha) {
+        JTable tabela = view.getTabelaFuncionarios();
 
         String id = valorCelula(tabela, linha, 0);
         String nome = valorCelula(tabela, linha, 1);
@@ -76,7 +77,7 @@ public class BuscarAdmController {
         String data = valorCelula(tabela, linha, 6);
         String dataAtualizacao = valorCelula(tabela, linha, 7);
 
-        view.InfoADM(id, nome, email, senha, telefone, cargo, data, dataAtualizacao);
+        view.InfoFuncionarios(id, nome, email, senha, telefone, cargo, data, dataAtualizacao);
     }
 
 }
