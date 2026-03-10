@@ -28,13 +28,13 @@ public class EditarAdmController {
 
     private void IniciarController() {
         System.out.println("Editar iniciado");
-        view.getBtEditar().addActionListener(e -> Editar());
+        view.getBtEditarADM().addActionListener(e -> Editar());
     }
 
     private void Editar() {
         System.out.println("Editar iniciado");
         // Recupera o Map com os dados da view
-        Map<String, String> dados = view.InfouUsuarioComDados();
+        Map<String, String> dados = view.InfouUsuarioComDadosADM();
         String IdUsuario = dados.get("id");
         String Nome = dados.get("nome");
         String Email = dados.get("email");
@@ -42,7 +42,7 @@ public class EditarAdmController {
         String Telefone = dados.get("telefone");
         String Cargo = dados.get("cargo");
 
-        boolean sucesso = service.EditarUsuario(IdUsuario, Nome, Email, Senha, Cargo, Telefone);
+        boolean sucesso = service.EditarADM(IdUsuario, Nome, Email, Senha, Cargo, Telefone);
         if (sucesso == true) {
             JOptionPane.showMessageDialog(null, "Usuario editado com Sucesso!");
         } else {
