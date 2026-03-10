@@ -26,14 +26,14 @@ public class ApagarAdmController {
     private void IniciarController(){
         //Reconhe o o metodo GET que recebe click no botao excluir do front 
         //em seguida chama o metodo "ExcluirUsuario" atraves do click
-        view.getBtExlcuir().addActionListener(e -> ExcluirUsuario());
+        view.getBtExlcuirADM().addActionListener(e -> ExcluirUsuario());
         
     }
     
     private void ExcluirUsuario(){
         //Estudar melhor op metodo e otimizar o service
         String IdUsuario = view.GetIdUsuario().trim();
-        boolean sucesso = service.ApagarUsuario(IdUsuario);
+        boolean sucesso = service.ApagarADM(IdUsuario);
         if(sucesso == false){
         JOptionPane.showMessageDialog(null, "Usuario Excluido com Sucesso!");
         }else{
