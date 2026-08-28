@@ -1,6 +1,5 @@
 package com.oficina.project.controller.Administradores;
 
-import com.oficina.project.view.TelaPrincipal.AdmViews.CadastrarAdmView;
 import com.oficina.project.model.entities.Administradores;
 import com.oficina.project.service.AdministradoresService;
 import com.oficina.project.view.TelaPrincipal.TelaPrincipal;

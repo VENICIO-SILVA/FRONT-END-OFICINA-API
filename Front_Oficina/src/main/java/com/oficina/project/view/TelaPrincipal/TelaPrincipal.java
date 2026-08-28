@@ -8,7 +8,6 @@ import com.oficina.project.controller.Administradores.BuscarAdmController;
 import com.oficina.project.controller.Administradores.CadastrarAdmController;
 import com.oficina.project.controller.Carros.BuscarCarroController;
 import com.oficina.project.controller.Clientes.BuscarClienteController;
-import com.oficina.project.view.TelaPrincipal.AdmViews.CadastrarAdmView;
 import com.oficina.project.view.TelaPrincipal.CarrosView.TelaVincularClienteCarros;
 import com.oficina.project.view.TelaPrincipal.ClienteViews.CadastrarClienteView;
 import java.awt.Color;
@@ -16,6 +15,7 @@ import java.awt.Desktop;
 import java.awt.Image;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.ComboBoxEditor;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -220,6 +220,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        CampoResultadoNomeFuncionario = new javax.swing.JTextField();
+        CampoResultadoEmailfuncionario = new javax.swing.JTextField();
+        CampoResultadoSenhaFuncionario = new javax.swing.JTextField();
+        CampoResultadoTelefoneFuncionario = new javax.swing.JTextField();
+        CampoResultadoCargoFuncionario = new javax.swing.JTextField();
+        CampoResultadoCadastradoFuncionario = new javax.swing.JTextField();
         jInternalFrame3 = new javax.swing.JInternalFrame();
         jScrollPane3 = new javax.swing.JScrollPane();
         TabelaFuncionarios = new javax.swing.JTable();
@@ -1432,24 +1438,41 @@ public class TelaPrincipal extends javax.swing.JFrame {
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrame1Layout.createSequentialGroup()
                 .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrame1Layout.createSequentialGroup()
+                            .addGap(19, 19, 19)
+                            .addComponent(jLabel18)
+                            .addGap(18, 18, 18)
+                            .addComponent(CampoResultadoCargoFuncionario))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrame1Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jLabel17)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(CampoResultadoTelefoneFuncionario))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jInternalFrame1Layout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(CampoResultadoSenhaFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE))
+                                .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                                    .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel15)
+                                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(CampoResultadoNomeFuncionario, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
+                                        .addComponent(CampoResultadoEmailfuncionario))))))
                     .addGroup(jInternalFrame1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(BarraProgressoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel15)))
-                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jLabel18))
-                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel17))
-                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel19)))
+                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(BarraProgressoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+                                .addComponent(jLabel19)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CampoResultadoCadastradoFuncionario)
+                                .addGap(74, 74, 74)))))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         jInternalFrame1Layout.setVerticalGroup(
@@ -1458,18 +1481,30 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(BarraProgressoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addComponent(jLabel15)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(CampoResultadoNomeFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel14)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(CampoResultadoEmailfuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel16)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(CampoResultadoSenhaFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel17)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(CampoResultadoTelefoneFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel18)
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(CampoResultadoCargoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel19)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(CampoResultadoCadastradoFuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(167, Short.MAX_VALUE))
         );
 
         jInternalFrame3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "PESQUISA/EDIÇÃO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
@@ -1862,11 +1897,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void MenuFuncionarioActionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuFuncionarioActionActionPerformed
-        CadastrarAdmView iniciar = new CadastrarAdmView();
-        iniciar.setVisible(true);
-        iniciar.toFront();
-        TelaInterna.add(iniciar);
-
 
     }//GEN-LAST:event_MenuFuncionarioActionActionPerformed
 
@@ -2016,7 +2046,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         int linha = TabelaFuncionarios.getSelectedRow();
         if (linha == -1) {
             return;
-            new BuscarAdmController(this).usuarioSelecionado(linha);
         }
     }//GEN-LAST:event_TabelaFuncionariosMouseClicked
     public String GetIdUsuarioCliente() {
@@ -2161,13 +2190,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField CampoPesquisarEditarCarros;
     private javax.swing.JTextField CampoPesquisarFuncionario;
     private javax.swing.JTextField CampoPlacaCadastroCarros;
+    private javax.swing.JTextField CampoResultadoCadastradoFuncionario;
     private javax.swing.JTextField CampoResultadoCadastroCarros;
     private javax.swing.JTextField CampoResultadoCadastroCliente;
+    private javax.swing.JTextField CampoResultadoCargoFuncionario;
     private javax.swing.JTextField CampoResultadoClienteCarros;
     private javax.swing.JTextField CampoResultadoCorCarros;
     private javax.swing.JTextField CampoResultadoCpfCliente;
+    private javax.swing.JTextField CampoResultadoEmailfuncionario;
     private javax.swing.JTextField CampoResultadoIdClienteCarros;
+    private javax.swing.JTextField CampoResultadoNomeFuncionario;
     private javax.swing.JTextField CampoResultadoPlaca;
+    private javax.swing.JTextField CampoResultadoSenhaFuncionario;
+    private javax.swing.JTextField CampoResultadoTelefoneFuncionario;
     private javax.swing.JTextField CampoSenhaFuncionario;
     private javax.swing.JTextField CampoTelefoneCadastroCliente;
     private javax.swing.JTextField CampoTelefoneFuncionario;
@@ -2415,47 +2450,69 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     //AREA DA TELA INTERNA FUNCIONARIOS
-    public Object getBtSalvarFuncionario() {
+    public String GetIdFuncionario() {
+        return CampoInfoIdFuncionario.getText();
+    }
+
+    public javax.swing.JButton getBtSalvarFuncionario() {
         return BtCadastrarFuncionario;
     }
-
-    public Object GetNomeFuncionario() {
-        return CampoNomeFuncionario;
+    public javax.swing.JButton getBtEditarFuncionario() {
+        return BtEditarFuncionario;
     }
 
-    public Object GetEmailFuncionario() {
-        return CampoEmailFuncionario;
+    public String GetNomeFuncionario() {
+        return CampoNomeFuncionario.toString();
     }
 
-    public Object GetSenhaFuncionario() {
-        return CampoSenhaFuncionario;
+    public String GetEmailFuncionario() {
+        return CampoEmailFuncionario.toString();
     }
 
-    public Object GetCargoFuncionario() {
+    public String GetSenhaFuncionario() {
+        return CampoSenhaFuncionario.toString();
+    }
+
+    public String GetCargoFuncionario() {
         return ComboBoxFuncionario.getSelectedItem().toString();
     }
 
-    public Object GetTelefoneFuncionario() {
-        return CampoTelefoneFuncionario;
+    public String GetTelefoneFuncionario() {
+        return CampoTelefoneFuncionario.toString();
     }
 
-    public Object AtivarBarraProgressoFuncionario() {
+    public JProgressBar AtivarBarraProgressoFuncionario() {
         return BarraProgressoFuncionario;
     }
 
-    public void RetornoDadosFuncionario(String Nome, String Email, String Senha, String Telefone, String Cargo, String toString) {
-     this.Campo   
+    public void RetornoDadosFuncionario(String Nome, String Email, String Senha, String Telefone, String Cargo, String DataCadastro) {
+        this.CampoResultadoNomeFuncionario.setText(Nome);
+        this.CampoResultadoEmailfuncionario.setText(Email);
+        this.CampoResultadoSenhaFuncionario.setText(Senha);
+        this.CampoResultadoTelefoneFuncionario.setText(Telefone);
+        this.CampoResultadoCargoFuncionario.setText(Cargo);
+        this.CampoResultadoCadastradoFuncionario.setText(DataCadastro);
+    }
+     public Map<String, String> InfoFuncionarioEditar() {
+        Map<String, String> dados = new HashMap<>();
+        dados.put("id", CampoInfoIdCliente.getText());
+        dados.put("Nome", CampoInfoNomeCliente.getText());
+        dados.put("email", CampoInfoEmailCliente.getText());
+        dados.put("senha", CampoInfoCPFCliente.getText());
+        dados.put("telefone", CampoInfoTelefoneCliente.getText());
+        dados.put("carho", CampoInfoEnderecoCliente.getText());
+        return dados;
     }
 
-    public Object getCampoPesquisarFuncionario() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public JTextField getCampoPesquisarFuncionario() {
+        return this.CampoPesquisarFuncionario;
     }
 
-    public Object getTabelaFuncionarios() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public JTable getTabelaFuncionarios() {
+        return this.TabelaFuncionarios;
     }
 
     public void InfoFuncionarios(String id, String nome, String email, String senha, String telefone, String cargo, String data, String dataAtualizacao) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+
     }
 }

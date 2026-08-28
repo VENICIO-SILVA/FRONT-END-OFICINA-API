@@ -5,7 +5,7 @@
 package com.oficina.project.controller.Administradores;
 
 import com.oficina.project.service.AdministradoresService;
-import com.oficina.project.view.TelaPrincipal.AdmViews.CadastrarAdmView;
+import com.oficina.project.view.TelaPrincipal.TelaPrincipal;
 import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.tools.Diagnostic;
@@ -16,10 +16,10 @@ import javax.tools.Diagnostic;
  */
 public class EditarAdmController {
 
-    private CadastrarAdmView view;
+    private TelaPrincipal view;
     private AdministradoresService service;
 
-    public EditarAdmController(CadastrarAdmView view) {
+    public EditarAdmController(TelaPrincipal view) {
         this.view = view;
         this.service = new AdministradoresService();
         System.out.println("Editar iniciado");
@@ -27,22 +27,22 @@ public class EditarAdmController {
     }
 
     private void IniciarController() {
-        System.out.println("Editar iniciado");
-        view.getBtEditarADM().addActionListener(e -> Editar());
+        System.out.println("Editar Funcionario iniciado");
+        view.getBtEditarFuncionario().addActionListener(e -> Editar());
     }
 
     private void Editar() {
         System.out.println("Editar iniciado");
         // Recupera o Map com os dados da view
-        Map<String, String> dados = view.InfouUsuarioComDadosADM();
-        String IdUsuario = dados.get("id");
+        Map<String, String> dados = view.InfoFuncionarioEditar();
+        String IdFuncionario = dados.get("id");
         String Nome = dados.get("nome");
         String Email = dados.get("email");
         String Senha = dados.get("senha");
         String Telefone = dados.get("telefone");
         String Cargo = dados.get("cargo");
 
-        boolean sucesso = service.EditarADM(IdUsuario, Nome, Email, Senha, Cargo, Telefone);
+        boolean sucesso = service.EditarFuncionario(IdFuncionario, Nome, Email, Senha, Cargo, Telefone);
         if (sucesso == true) {
             JOptionPane.showMessageDialog(null, "Usuario editado com Sucesso!");
         } else {

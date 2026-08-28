@@ -104,7 +104,7 @@ public class AdministradoresService {
 
     }
 
-    public boolean EditarADM(String IdUsuario, String Nome, String Email, String Senha, String Cargo, String Telefone) {
+    public boolean EditarFuncionario(String IdUsuario, String Nome, String Email, String Senha, String Cargo, String Telefone) {
         try {
             //abertura de conexao
             URL url = new URL("http://localhost:8080/Administradores/EditarUsuario/" + IdUsuario);
